@@ -1109,7 +1109,8 @@ template {
 html,
 body {
   color: black;
-  font-size: 1rem; }
+  font-size: 1rem;
+  background-color: black; }
   @media (max-width: 768px) {
     html,
     body {
