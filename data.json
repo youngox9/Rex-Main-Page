@@ -1,0 +1,43 @@
+[{
+        "bg": "img/web01a.jpg",
+        "pic": ["img/web01.jpg", "img/web01.jpg", "img/web01.jpg", "img/web01.jpg", "img/web01.jpg"],
+        "tit": "Moist Diane 黛絲恩",
+        "des": "<p>網址：<a target='_blank' href='http://www.moist-diane.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2016/07</p><p>簡介：</p>"
+    }, {
+        "bg": "img/web02a.jpg",
+        "pic": ["img/web02.jpg", "img/web02.jpg", "img/web02.jpg", "img/web02.jpg", "img/web02.jpg"],
+        "tit": "ASICS 亞瑟士台灣",
+        "des": "<p>網址：<a target='_blank' href='https://www.asics.com/tw/zh-tw'>官方網站(已改版)</a></p><p>網址：<a target='_blank' href=''>亞瑟士課程</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2016/07</p><p>簡介：</p>"
+    }, {
+        "bg": "img/web03a.jpg",
+        "pic": ["img/web03.jpg", "img/web03.jpg", "img/web03.jpg", "img/web03.jpg", "img/web03.jpg"],
+        "tit": "KOTEX靠得住",
+        "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20160605_kotex/'>活動連結(活動已結束)</a></p><p>網站狀況：下線</p><p>製作人：eray</p><p>製作日期：2016/06/05</p><p>簡介：</p>"
+    }, {
+        "bg": "img/web04a.jpg",
+        "pic": ["img/web04.jpg"],
+        "tit": "中鋼運通股份有限公司",
+        "des": "<p>網址：<a target='_blank' href='http://www.csebulk.com.tw/'>活動連結(活動已結束)</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2016/12/22</p><p>簡介：</p>"
+    }, {
+        "bg": "img/web05a.jpg",
+        "pic": ["img/web05.jpg"],
+        "tit": "【鋼の探偵】陽岱鋼身陷竊案謎團",
+        "des": "<p>網址：<a target='_blank' href='http://grandlancer.mitsubishi-motors.com.tw/detective/'>活動連結(活動已結束)</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/02/14</p><p>簡介：</p>"
+    }, {
+        "bg": "img/web06a.jpg",
+        "pic": ["img/web06.jpg"],
+        "tit": "emoving 電動機車",
+        "des": "<p>網址：<a target='_blank' href='http://www.e-moving.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/06/27</p><p>簡介：</p>"
+    }, {
+        "bg": "img/web07a.jpg",
+        "pic": ["img/web07.jpg"],
+        "tit": "朱志康空間規劃",
+        "des": "<p>網址：<a target='_blank' href='http://www.kang.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/06/27</p><p>簡介：</p>"
+    },
+    {
+        "bg": "img/web07a.jpg",
+        "pic": ["img/web07.jpg"],
+        "tit": "朱志康空間規劃",
+        "des": "<p>網址：<a target='_blank' href='http://www.kang.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/06/27</p><p>簡介：</p>"
+    }
+]
