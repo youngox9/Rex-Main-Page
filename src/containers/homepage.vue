@@ -1,6 +1,6 @@
 <template>
     <div class="container" >
-        <h2>Website Gallery</h2>
+        <h2>Website Gallery..</h2>
         <div class="content">
             <div class="row inline-btn">
               <div class="col">
@@ -14,8 +14,8 @@
               </div>
             </div>
             <div class="packery-container" ref="container">
-                <div class="packery-item" v-for="(item, index) in list" :key="index" @click="openModal(item)">
-                  <modal :item="item" :close="close.bind(this)"></modal>
+                <div class="packery-item" v-for="(item, index) in list" :key="index">
+                  <modal :item="item"></modal>
                 </div> 
             </div>
         </div>
@@ -68,14 +68,6 @@ export default {
     },
     close(e) {
       this.open = false;
-    },
-    openModal(item) {
-      this.open = true;
-      this.list.forEach(el => {
-        el.active = false;
-      });
-      item.active = true;
-      this.$forceUpdate();
     },
     updatePackery() {
       this.packery.layout();

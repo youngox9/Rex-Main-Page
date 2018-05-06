@@ -18,7 +18,7 @@ export default {
           options: this.flickityOptions
         }
       },
-      [ 
+      [
         this.children.map((slot, i) => {
           return createElement(
             "div",
@@ -49,6 +49,7 @@ export default {
         wrapAround: true,
         initialIndex: 0,
         fullscreen: true,
+        autoPlay: 3000,
         on: {
           change: this.onSlideChange
         }
@@ -63,23 +64,14 @@ export default {
     }
   },
   mounted() {
-    this.flickity = this.$refs.flickity;
+    this.flickity = this.$refs.flickity.$flickity;
+    this.flickity.pausePlayer();
   },
   methods: {
     onSlideChange(index) {
       if (typeof this.onchange === "function") {
         this.onchange(index);
       }
-      this.playIframe();
-    },
-    playIframe() {
-      const $iframe = $(this.flickity.$el).find("iframe");
-      $iframe.each((index, iframe) => {
-        const win = iframe.contentWindow;
-        if (win && "restart" in win) {
-          win.restart();
-        }
-      });
     }
   },
   watch: {
@@ -87,7 +79,12 @@ export default {
       this.flickity.select(val);
     },
     active(val, oldval) {
-      this.playIframe();
+      if (val) {
+        this.flickity.playPlayer();
+      } else {
+        console.log(false);
+        this.flickity.stopPlayer();
+      }
     }
   }
 };

@@ -1,18 +1,19 @@
 <template>
   <div>
     <div class="modal-fake"></div>
-    <div class="modal" :class="{active:open}" ref="modal">
+    <div class="modal" :class="{active:open}" ref="modal" >
       <div class="close" @click="onClose"></div>
       <div class="blur-bk" :style="{background:`url(${item.bg}) center/cover no-repeat`}"></div>
       <p class="sub-tit">{{item.tit}}</p>
       <div class="modal-wrap">
         <div class="row row-no-gutter">
           <div class="col col-pic">
-            <div class="modal-cover" :style="{background: getPicBk(item.pic[0])}"  @click="onOpen()" :class="{loaded}"></div>
-            <div class="modal-carousel" @click="onOpen()">
-              <carousel-loop>
-                <div class="modal-pic" v-for="(p, index) in item.pic" :key="index" :style="{background:getPicBk(p)}"></div>
-              </carousel-loop>
+            <div class="modal-cover" @click="onOpen()" :class="{loaded}" >
+              <div class="modal-carousel" @click="onOpen()">
+                <carousel-loop :active="open">
+                  <div class="modal-pic" v-for="(p, index) in item.pic" :key="index" :style="{backgroundImage:getPicBk(p)}"></div>
+                </carousel-loop>
+              </div>
             </div>
           </div>
           <div class="col col-content" ref="content">
@@ -31,7 +32,9 @@
 import Vue from "vue";
 import { TweenMax, Power2, TimelineLite } from "gsap";
 import CarouselLoop from "./CarouselLoop";
+import Ripple from "vue-ripple-directive";
 
+Vue.directive("ripple", Ripple);
 export default {
   props: {
     item: {
@@ -64,12 +67,6 @@ export default {
     this.$modal = this.$refs.modal;
     this.$content = this.$refs.content;
     window.addEventListener("resize", this.onResize);
-    const image = new Image();
-    image.src = this.item.pic;
-    image.onload = () => {
-      _self.loaded = true;
-      this.getPicBk();
-    };
   },
   updated() {},
   components: {
@@ -77,7 +74,7 @@ export default {
   },
   methods: {
     getPicBk(pic) {
-      return `url(${pic}) center/cover no-repeat`;
+      return `url(${pic})`;
     },
     getBefore() {
       const $modal = this.$modal.parentNode;
@@ -111,7 +108,6 @@ export default {
           _self.$modal.style = "";
         }
       });
-      this.close();
     },
     onOpen() {
       if (!this.open) {
@@ -154,8 +150,7 @@ $height: 300px;
   left: 0;
   height: 100%;
   width: 100%;
-  cursor: pointer;
-
+  border-radius: 12px;
   .sub-tit {
     position: absolute;
     color: white;
@@ -208,13 +203,18 @@ $height: 300px;
     height: 100%;
     filter: blur(10px) brightness(1.1);
     opacity: 0;
-    transition: 0.6s ease all;
+    transition: 10s ease all;
+    transform: scale(1.2);
   }
   &.active {
     z-index: 999;
     background-color: white;
     overflow-y: auto;
     padding: 2%;
+    border-radius: 0px;
+    @media all and(max-width:768px) {
+      padding-top: 64px;
+    }
     .blur-bk {
       opacity: 0.3;
     }
@@ -226,8 +226,15 @@ $height: 300px;
           visibility: visible;
           display: block;
           padding: 6%;
-          h4 {
+          h4,
+          p {
             &:after {
+              pointer-events: none;
+              transform: scaleX(0);
+            }
+          }
+          h4 {
+            &:before {
               transform: scale(1);
             }
           }
@@ -238,9 +245,15 @@ $height: 300px;
           background-size: auto 100% !important;
           // height: auto !important;
           padding-bottom: 50%;
+          position: relative;
         }
         .modal-carousel {
-          .flickity-button {
+          pointer-events: inherit;
+          .modal-pic {
+            background: url("") center/contain no-repeat;
+          }
+          .flickity-button,
+          .flickity-page-dots {
             display: block;
           }
         }
@@ -260,6 +273,10 @@ $height: 300px;
     display: inline-block;
     vertical-align: middle;
     width: 100%;
+    .row {
+      align-items: center;
+      align-content: center;
+    }
     .col-pic,
     .col-content {
       @media all and(max-width:768px) {
@@ -277,6 +294,8 @@ $height: 300px;
         width: 100%;
         transition: 0.3s ease all;
         padding-bottom: $height;
+        opacity: 0;
+        cursor: pointer;
       }
       .modal-carousel {
         position: absolute;
@@ -284,6 +303,13 @@ $height: 300px;
         left: 0;
         height: 100%;
         width: 100%;
+        pointer-events: none;
+        .modal-pic {
+          background: url("") center/cover no-repeat;
+        }
+        .carousel-cell {
+          margin-right: 64px;
+        }
         .flickity-enabled,
         .flickity-viewport,
         .flickity-slider,
@@ -298,6 +324,26 @@ $height: 300px;
         .flickity-button {
           display: none;
         }
+        .flickity-page-dots {
+          display: none;
+          position: absolute;
+          bottom: 6px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          .dot {
+            background-color: black;
+            width: 8px;
+            height: 8px;
+            margin: 0 2px;
+            vertical-align: middle;
+            transition: 0.3s ease all;
+            &.is-selected {
+              width: 10px;
+              height: 10px;
+              background-color: white;
+            }
+          }
+        }
       }
     }
     .col-content {
@@ -307,12 +353,13 @@ $height: 300px;
       margin-left: -100%;
       .modal-content {
         visibility: hidden;
-        // display: none;
+        display: none;
         transition: 0.6s ease all;
         text-align: center;
+
         h4 {
           position: relative;
-          font-size: 3em;
+          font-size: 2em;
           text-align: center;
           font-weight: lighter;
           color: #5f5f5f;
@@ -320,7 +367,7 @@ $height: 300px;
           display: inline-block;
           padding: 0 6%;
           margin-bottom: 6%;
-          &:after {
+          &:before {
             content: "";
             position: absolute;
             display: block;
@@ -334,9 +381,26 @@ $height: 300px;
           }
         }
         p {
+          position: relative;
           line-height: 1.5;
           font-size: 1.2em;
           text-align: left;
+        }
+        h4,
+        p {
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: white;
+            transition: 1.2s ease all;
+            transform-origin: right;
+            // transition-delay: 0.6s;
+          }
         }
       }
     }
@@ -345,11 +409,17 @@ $height: 300px;
     display: none;
     width: 64px;
     height: 64px;
-    position: absolute;
-    right: 6px;
+    position: fixed;
+    right: 16px;
     top: 6px;
-    z-index: 2;
+    z-index: 12;
+    cursor: pointer;
     background: url("../../img/close.png") center/contain no-repeat;
+    transition: 0.6s ease all;
+    &:hover {
+      opacity: 0.6;
+      transform: scale(1.08);
+    }
   }
 }
 </style>
