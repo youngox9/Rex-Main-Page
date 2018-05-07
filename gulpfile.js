@@ -96,14 +96,14 @@ gulp.task('watch-dev', function () {
 //gulp run watch with NO-autoprefix
 gulp.task('default', function () {
     gulp.run('watch');
-    gulp.run('webserver');
+    // gulp.run('webserver');
     gulp.run('webpack');
 });
 
 //gulp run watch with autoprefix
 gulp.task('dev', function () {
     gulp.run('watch-dev');
-    gulp.run('webserver');
+    // gulp.run('webserver');
     gulp.run('webpack');
 });
 

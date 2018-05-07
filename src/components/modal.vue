@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="modal-container" :class="{active:imageLoaded}">
     <div class="modal-fake"></div>
-    <div class="modal" :class="{active:open}" ref="modal" >
+    <div class="modal" :class="{active:open}" ref="modal">
       <div class="close" @click="onClose"></div>
       <div class="blur-bk" :style="{background:`url(${item.bg}) center/cover no-repeat`}"></div>
       <p class="sub-tit">{{item.tit}}</p>
@@ -16,8 +16,8 @@
               </div>
             </div>
           </div>
-          <div class="col col-content" ref="content">
-              <div class="modal-content">
+          <div class="col col-content"  ref="content">
+              <div class="modal-content" :class="{active:complete}">
                   <h4 v-html="item.tit"></h4>
                   <p v-html="item.des"></p>
               </div>
@@ -54,11 +54,8 @@ export default {
     return {
       loaded: false,
       open: false,
-      picStyle: {
-        background: "",
-        height: 0
-      },
-      fakeStyle: { height: 0 }
+      complete: false,
+      imageLoaded: false
     };
   },
   created() {},
@@ -67,12 +64,30 @@ export default {
     this.$modal = this.$refs.modal;
     this.$content = this.$refs.content;
     window.addEventListener("resize", this.onResize);
+    this.loadImage();
   },
-  updated() {},
+  updated() {
+    this.loadImage();
+  },
   components: {
     CarouselLoop
   },
   methods: {
+    loadImage() {
+      const _self = this;
+      const pms = this.item.pic.map(pic => {
+        return new Promise((resolve, reject) => {
+          const image = new Image();
+          image.src = pic;
+          image.onload = () => {
+            resolve(true);
+          };
+        });
+      });
+      Promise.all(pms).then(values => {
+        _self.imageLoaded = true;
+      });
+    },
     getPicBk(pic) {
       return `url(${pic})`;
     },
@@ -98,18 +113,22 @@ export default {
     },
     onClose() {
       const _self = this;
-      this.open = false;
-      const $parent = this.$modal.parentNode;
-      $("html,body").css("overflow", "initial");
-      TweenMax.to(this.$modal, 0.3, {
-        css: this.before,
-        ease: "cubic-bezier(0.4, 0.0, 0.2, 1)",
-        onComplete() {
-          _self.$modal.style = "";
-        }
-      });
+      if (this.open) {
+        this.open = false;
+        const $parent = this.$modal.parentNode;
+        this.complete = false;
+        $("html,body").css("overflow", "initial");
+        TweenMax.to(this.$modal, 0.3, {
+          css: this.before,
+          ease: "cubic-bezier(0.4, 0.0, 0.2, 1)",
+          onComplete() {
+            _self.$modal.style = "";
+          }
+        });
+      }
     },
     onOpen() {
+      const _self = this;
       if (!this.open) {
         this.open = true;
         $("html,body").css("overflow", "hidden");
@@ -121,7 +140,11 @@ export default {
           },
           {
             css: this.getAfter(),
-            ease: "cubic-bezier(0.4, 0.0, 0.2, 1)"
+            ease: "cubic-bezier(0.4, 0.0, 0.2, 1)",
+            onComplete: () => {
+              _self.complete = true;
+              // _self.$forceUpdate();
+            }
           }
         );
       }
@@ -135,6 +158,26 @@ export default {
 
 <style lang="scss">
 $height: 300px;
+.modal-container {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background: black url("../../img/loading.svg")center/64px no-repeat;
+  }
+  &.active {
+    &:after {
+      display: none;
+    }
+    .modal {
+      animation: fadeIn 1.2s 0s 1 both;
+    }
+  }
+}
 .modal-fake {
   width: 100%;
   position: relative;
@@ -142,7 +185,7 @@ $height: 300px;
   padding-bottom: $height;
 }
 .modal {
-  transition: 0.6s ease background-color, 0.6s ease padding;
+  transition: 0.3s ease padding;
   z-index: 100;
   overflow: hidden;
   position: absolute;
@@ -203,7 +246,7 @@ $height: 300px;
     height: 100%;
     filter: blur(10px) brightness(1.1);
     opacity: 0;
-    transition: 10s ease all;
+    transition: 1.2s ease all;
     transform: scale(1.2);
   }
   &.active {
@@ -226,18 +269,6 @@ $height: 300px;
           visibility: visible;
           display: block;
           padding: 6%;
-          h4,
-          p {
-            &:after {
-              pointer-events: none;
-              transform: scaleX(0);
-            }
-          }
-          h4 {
-            &:before {
-              transform: scale(1);
-            }
-          }
         }
       }
       .col-pic {
@@ -289,12 +320,10 @@ $height: 300px;
       z-index: 2;
       position: relative;
       .modal-cover {
-        animation: fadeIn 0.6s 0s 1 both;
         display: block;
         width: 100%;
         transition: 0.3s ease all;
         padding-bottom: $height;
-        opacity: 0;
         cursor: pointer;
       }
       .modal-carousel {
@@ -356,7 +385,20 @@ $height: 300px;
         display: none;
         transition: 0.6s ease all;
         text-align: center;
-
+        &.active {
+          h4,
+          p {
+            &:after {
+              pointer-events: none;
+              transform: scaleX(0);
+            }
+          }
+          h4 {
+            &:before {
+              transform: scaleX(1);
+            }
+          }
+        }
         h4 {
           position: relative;
           font-size: 2em;
@@ -365,7 +407,7 @@ $height: 300px;
           color: #5f5f5f;
           // letter-spacing: 0.12em;
           display: inline-block;
-          padding: 0 6%;
+          padding: 0 6% 2% 6%;
           margin-bottom: 6%;
           &:before {
             content: "";
@@ -375,7 +417,7 @@ $height: 300px;
             width: 100%;
             bottom: 0;
             left: 0;
-            background-color: #8b8b8b;
+            background-color: #5f5f5f;
             transition: 1.2s 0.12s ease-in-out all;
             transform: scale(0);
           }
@@ -397,9 +439,8 @@ $height: 300px;
             height: 100%;
             z-index: 2;
             background-color: white;
-            transition: 1.2s ease all;
+            transition: 0.6s ease all;
             transform-origin: right;
-            // transition-delay: 0.6s;
           }
         }
       }

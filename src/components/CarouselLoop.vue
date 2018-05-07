@@ -65,7 +65,7 @@ export default {
   },
   mounted() {
     this.flickity = this.$refs.flickity.$flickity;
-    this.flickity.pausePlayer();
+    this.flickity.stopPlayer();
   },
   methods: {
     onSlideChange(index) {
@@ -82,7 +82,6 @@ export default {
       if (val) {
         this.flickity.playPlayer();
       } else {
-        console.log(false);
         this.flickity.stopPlayer();
       }
     }
