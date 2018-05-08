@@ -1,4 +1,5 @@
 <template>
+  <div>
     <div class="container" >
         <h2>Website Gallery</h2>
         <div class="content">
@@ -27,6 +28,7 @@
             <button class="loadmore" @click="loadmore()" v-ripple="'rgba(255,255,255,0.3)'" v-if="hasMore">LOAD MORE</button>
         </div>
     </div>
+  </div>
 </template>
 
 <script>

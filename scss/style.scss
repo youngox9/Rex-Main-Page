@@ -12,9 +12,6 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box; // font-family: 'cwTeXHei', 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif';
   font-family: 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif';
-  br {
-    font-family: 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif';
-  }
 }
 
 html,
@@ -27,6 +24,11 @@ body {
   }
 }
 
+body {
+  // width: 100%;
+  // overflow-x: hidden;
+}
+
 .container {
   padding: 0;
   margin: 0;
@@ -36,7 +38,7 @@ body {
   >.content {
     display: block;
     margin: 0 auto;
-    padding: 6px;
+    padding: 12px;
     max-width: $lg;
   }
 }
