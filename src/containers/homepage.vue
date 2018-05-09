@@ -154,7 +154,7 @@ h2 {
 }
 .packery-item {
   width: calc(33.3333% - 10px);
-  @media screen and(max-width: 768px) {
+  @media all and(max-width: 768px) {
     width: 100%;
   }
 }

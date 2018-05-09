@@ -59,6 +59,9 @@ $navWidth: 200px;
   position: relative;
   backface-visibility: hidden;
   // transform: translate(0, 0);
+  @media all and(max-width: 768px) {
+    padding-top: 64px;
+  }
   > .container {
     transition: 0.3s ease all;
   }
