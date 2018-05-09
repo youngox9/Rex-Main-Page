@@ -1,7 +1,9 @@
 <template>
   <div class="modal-container" :class="{active:imageLoaded}">
+
     <div class="modal-fake"></div>
     <div class="modal" :class="{active:open}" ref="modal">
+      <div class="modal-blur"  @click="onOpen()"></div>
       <div class="close" @click="onClose"></div>
       <div class="blur-bk" :style="{background:`url(${item.bg}) center/cover no-repeat`}"></div>
       <p class="sub-tit">{{item.tit}}</p>
@@ -95,10 +97,10 @@ export default {
       const $modal = this.$modal.parentNode;
       this.before = {
         position: "fixed",
-        left: $modal.getBoundingClientRect().x,
-        top: $modal.getBoundingClientRect().y,
-        height: $modal.getBoundingClientRect().height,
-        width: $modal.getBoundingClientRect().width
+        left: $modal.getBoundingClientRect().x || $($modal).offset().left,
+        top: $modal.getBoundingClientRect().y || $($modal).offset().top,
+        height: $modal.getBoundingClientRect().height || $($modal).height(),
+        width: $modal.getBoundingClientRect().width || $($modal).width()
       };
       return this.before;
     },
@@ -117,12 +119,12 @@ export default {
         this.open = false;
         const $parent = this.$modal.parentNode;
         this.complete = false;
-        $("html,body").css("overflow", "initial");
+        $("html,body").css("overflow", "");
         TweenMax.to(this.$modal, 0.3, {
           css: this.before,
           ease: "cubic-bezier(0.4, 0.0, 0.2, 1)",
           onComplete() {
-            _self.$modal.style = "";
+            _self.$modal.setAttribute("style", "");
           }
         });
       }
@@ -143,7 +145,6 @@ export default {
             ease: "cubic-bezier(0.4, 0.0, 0.2, 1)",
             onComplete: () => {
               _self.complete = true;
-              // _self.$forceUpdate();
             }
           }
         );
@@ -176,6 +177,19 @@ $height: 300px;
     .modal {
       animation: fadeIn 1.2s 0s 1 both;
     }
+  }
+  .modal-blur {
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.86);
+    z-index: 10;
+    transition: 0.6s ease all;
+    cursor: pointer;
   }
 }
 .modal-fake {
@@ -211,27 +225,14 @@ $height: 300px;
     transform: translate(0, 100%);
     letter-spacing: 0.22em;
   }
-  &:before {
-    content: "";
-    pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.86);
-    z-index: 10;
-    transition: 0.6s ease all;
-  }
+
   &:not(.active):hover {
     .sub-tit {
       opacity: 1;
       visibility: visible;
       transform: translate(0, 0%);
     }
-    &:before {
+    .modal-blur {
       visibility: visible;
       opacity: 1;
     }
@@ -274,7 +275,7 @@ $height: 300px;
       }
       .col-pic {
         .modal-cover {
-          background-size: auto 100% !important;
+          background-size: contain !important;
           // height: auto !important;
           padding-bottom: 50%;
           position: relative;

@@ -54,7 +54,7 @@ export default {
 <style lang="scss">
 $navWidth: 200px;
 .view {
-  overflow: hidden;
+  // overflow: hidden;
   z-index: 3;
   position: relative;
   backface-visibility: hidden;
@@ -145,6 +145,7 @@ $navWidth: 200px;
           background-color: black;
           color: white;
           box-shadow: 4px 4px 8px #000;
+          transform: translate(-6px, 0);
         }
       }
       &:after {

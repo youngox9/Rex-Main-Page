@@ -37,8 +37,9 @@ import Vue from "vue";
 import Packery from "packery";
 import imagesloaded from "imagesloaded";
 import modal from "../components/modal";
-
 import Ripple from "vue-ripple-directive";
+
+const fetch = require("isomorphic-fetch");
 
 Vue.directive("ripple", Ripple);
 
