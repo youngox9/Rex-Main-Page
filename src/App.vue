@@ -2,7 +2,12 @@
   <div>
     <navbar :open="open" :openevent="toggleNav"/>
     <transition name="router-anim" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutUp">
-        <router-view class="view" :class="{active:open}"/>
+        <router-view class="view" :class="{active:open}">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </router-view>
     </transition>
   </div>
 </template>
@@ -10,7 +15,7 @@
 <script>
 import navbar from "./containers/navbar";
 import homepage from "./containers/navbar";
-
+window.fetch = require("isomorphic-fetch");
 export default {
   name: "app",
   data() {

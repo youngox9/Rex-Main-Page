@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container" >
-        <h2>Website Gallery</h2>
+        <h2>Website..</h2>
         <div class="content">
             <div class="row inline-btn">
               <div class="col-12 col-md-4">
@@ -20,7 +20,7 @@
                   </button>
               </div>
             </div>
-            <p class="text-center">資料慢慢補完中..</p>
+            <p class="sub-title">資料慢慢補完中..。<br>主要負責網站切版以及API串接等</p>
             <div class="packery-container" ref="container">
                 <div class="packery-item" v-for="item in list" :key="item.uid">
                   <modal :item="item"></modal>
@@ -38,8 +38,6 @@ import Packery from "packery";
 import imagesloaded from "imagesloaded";
 import modal from "../components/modal";
 import Ripple from "vue-ripple-directive";
-
-const fetch = require("isomorphic-fetch");
 
 Vue.directive("ripple", Ripple);
 
@@ -116,6 +114,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.sub-title {
+  text-align: center;
+  margin: 24px 0;
+}
 h2 {
   font-size: 4em;
   color: white;
@@ -153,12 +155,16 @@ h2 {
     }
   }
 }
-.packery-item {
-  width: calc(33.3333% - 10px);
-  @media all and(max-width: 768px) {
-    width: 100%;
+
+.packery-container {
+  .packery-item {
+    width: calc(33.3333% - 10px);
+    @media all and(max-width: 768px) {
+      width: calc(100% - 10px);
+    }
   }
 }
+
 .loadmore {
   font-size: 1.2em;
   width: 100%;

@@ -30107,8 +30107,6 @@ if (inBrowser && window.Vue) {
 
 
 
-var fetch = __webpack_require__(461);
-
 __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].directive("ripple", __WEBPACK_IMPORTED_MODULE_4_vue_ripple_directive__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -32728,6 +32726,8 @@ function setProps(modifiers,props) {
 //
 //
 //
+//
+//
 
 
 
@@ -32835,10 +32835,15 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].directive("card", {
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
-
+window.fetch = __webpack_require__(461);
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: "app",
   data: function data() {
@@ -38850,7 +38855,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, "\nh2[data-v-f584213c] {\n  font-size: 4em;\n  color: white;\n  text-align: center;\n  margin: 2% 0;\n}\n.inline-btn .btn[data-v-f584213c] {\n  cursor: pointer;\n  font-size: 1.2em;\n  width: 100%;\n  border: 1px solid white;\n  width: 100%;\n  border: none;\n  box-shadow: none;\n  padding: 2%;\n  background-color: transparent;\n  border-radius: 2em;\n  color: white;\n  border: 1px solid white;\n  margin-bottom: 4%;\n  position: relative;\n  transition: 0.3s ease all;\n}\n.inline-btn .btn.active[data-v-f584213c] {\n    border-color: white;\n    background-color: white;\n    color: black;\n}\n.inline-btn .btn input[type=\"radio\"][data-v-f584213c] {\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0%;\n    position: absolute;\n}\n.packery-item[data-v-f584213c] {\n  width: calc(33.3333% - 10px);\n}\n@media all and (max-width: 768px) {\n.packery-item[data-v-f584213c] {\n      width: 100%;\n}\n}\n.loadmore[data-v-f584213c] {\n  font-size: 1.2em;\n  width: 100%;\n  border: 1px solid white;\n  width: 100%;\n  border: none;\n  box-shadow: none;\n  background-color: transparent;\n  border-radius: 2em;\n  color: white;\n  border: 1px solid white;\n  margin-top: 48px;\n  transition: 0.3s ease all;\n  font-weight: bolder;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.loadmore[data-v-f584213c]:hover {\n    background: white;\n    color: black;\n}\n", ""]);
+exports.push([module.i, "\n.sub-title[data-v-f584213c] {\n  text-align: center;\n  margin: 24px 0;\n}\nh2[data-v-f584213c] {\n  font-size: 4em;\n  color: white;\n  text-align: center;\n  margin: 2% 0;\n}\n.inline-btn .btn[data-v-f584213c] {\n  cursor: pointer;\n  font-size: 1.2em;\n  width: 100%;\n  border: 1px solid white;\n  width: 100%;\n  border: none;\n  box-shadow: none;\n  padding: 2%;\n  background-color: transparent;\n  border-radius: 2em;\n  color: white;\n  border: 1px solid white;\n  margin-bottom: 4%;\n  position: relative;\n  transition: 0.3s ease all;\n}\n.inline-btn .btn.active[data-v-f584213c] {\n    border-color: white;\n    background-color: white;\n    color: black;\n}\n.inline-btn .btn input[type=\"radio\"][data-v-f584213c] {\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0%;\n    position: absolute;\n}\n.packery-container .packery-item[data-v-f584213c] {\n  width: calc(33.3333% - 10px);\n}\n@media all and (max-width: 768px) {\n.packery-container .packery-item[data-v-f584213c] {\n      width: calc(100% - 10px);\n}\n}\n.loadmore[data-v-f584213c] {\n  font-size: 1.2em;\n  width: 100%;\n  border: 1px solid white;\n  width: 100%;\n  border: none;\n  box-shadow: none;\n  background-color: transparent;\n  border-radius: 2em;\n  color: white;\n  border: 1px solid white;\n  margin-top: 48px;\n  transition: 0.3s ease all;\n  font-weight: bolder;\n  line-height: 1.5;\n  cursor: pointer;\n}\n.loadmore[data-v-f584213c]:hover {\n    background: white;\n    color: black;\n}\n", ""]);
 
 // exports
 
@@ -41007,7 +41012,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, "\n.modal-container:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n  background: black url(" + escape(__webpack_require__(406)) + ") center/64px no-repeat;\n}\n.modal-container.active:after {\n  display: none;\n}\n.modal-container.active .modal {\n  animation: fadeIn 1.2s 0s 1 both;\n}\n.modal-container .modal-blur {\n  visibility: hidden;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background-color: rgba(0, 0, 0, 0.86);\n  z-index: 10;\n  transition: 0.6s ease all;\n  cursor: pointer;\n}\n.modal-fake {\n  width: 100%;\n  position: relative;\n  display: block;\n  padding-bottom: 300px;\n}\n.modal {\n  transition: 0.3s ease padding;\n  z-index: 100;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  border-radius: 12px;\n  color: #5f5f5f;\n}\n.modal .sub-tit {\n    position: absolute;\n    color: white;\n    bottom: 0;\n    left: 0;\n    text-align: center;\n    font-size: 1.2em;\n    width: 100%;\n    z-index: 11;\n    opacity: 0;\n    visibility: hidden;\n    transition: 0.3s ease all;\n    font-weight: bolder;\n    transform: translate(0, 100%);\n    letter-spacing: 0.22em;\n}\n.modal:not(.active):hover .sub-tit {\n    opacity: 1;\n    visibility: visible;\n    transform: translate(0, 0%);\n}\n.modal:not(.active):hover .modal-blur {\n    visibility: visible;\n    opacity: 1;\n}\n.modal:not(.active):hover .modal-cover {\n    transform: scale(1.2);\n}\n.modal .blur-bk {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-filter: blur(10px) brightness(1.1);\n            filter: blur(10px) brightness(1.1);\n    opacity: 0;\n    transition: 1.2s ease all;\n    transform: scale(1.2);\n}\n.modal.active {\n    z-index: 999;\n    background-color: white;\n    overflow-y: auto;\n    padding: 2%;\n    border-radius: 0px;\n}\n@media all and (max-width: 768px) {\n.modal.active {\n        padding-top: 64px;\n}\n}\n.modal.active .blur-bk {\n      opacity: 0.3;\n}\n.modal.active .modal-wrap .col-content {\n      margin-left: 0%;\n      transition: 0.6s 0.12s ease margin-left;\n}\n.modal.active .modal-wrap .col-content .modal-content {\n        visibility: visible;\n        display: block;\n        padding: 6%;\n}\n.modal.active .modal-wrap .col-pic .modal-cover {\n      background-size: contain !important;\n      padding-bottom: 50%;\n      position: relative;\n}\n.modal.active .modal-wrap .col-pic .modal-carousel {\n      pointer-events: inherit;\n}\n.modal.active .modal-wrap .col-pic .modal-carousel .modal-pic {\n        background: url(\"\") center/contain no-repeat;\n}\n.modal.active .modal-wrap .col-pic .modal-carousel .flickity-button,\n      .modal.active .modal-wrap .col-pic .modal-carousel .flickity-page-dots {\n        display: block;\n}\n.modal.active .close {\n      display: block;\n}\n.modal:after {\n    content: \"\";\n    height: 100%;\n    display: inline-block;\n    vertical-align: middle;\n}\n.modal .modal-wrap {\n    display: inline-block;\n    vertical-align: middle;\n    width: 100%;\n}\n.modal .modal-wrap .row {\n      -ms-flex-align: center;\n          align-items: center;\n      -ms-flex-line-pack: center;\n          align-content: center;\n}\n@media all and (max-width: 768px) {\n.modal .modal-wrap .col-pic,\n      .modal .modal-wrap .col-content {\n        -ms-flex: 0 0 100%;\n        flex: 0 0 100%;\n        max-width: 100%;\n}\n}\n.modal .modal-wrap .col-pic {\n      z-index: 2;\n      position: relative;\n}\n.modal .modal-wrap .col-pic .modal-cover {\n        display: block;\n        width: 100%;\n        transition: 0.3s ease all;\n        padding-bottom: 300px;\n        cursor: pointer;\n}\n.modal .modal-wrap .col-pic .modal-carousel {\n        position: absolute;\n        top: 0%;\n        left: 0;\n        height: 100%;\n        width: 100%;\n        pointer-events: none;\n}\n.modal .modal-wrap .col-pic .modal-carousel .modal-pic {\n          background: url(\"\") center/cover no-repeat;\n}\n.modal .modal-wrap .col-pic .modal-carousel .carousel-cell {\n          margin-right: 64px;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-enabled,\n        .modal .modal-wrap .col-pic .modal-carousel .flickity-viewport,\n        .modal .modal-wrap .col-pic .modal-carousel .flickity-slider,\n        .modal .modal-wrap .col-pic .modal-carousel .carousel-cell,\n        .modal .modal-wrap .col-pic .modal-carousel .modal-pic {\n          position: absolute;\n          top: 0%;\n          left: 0;\n          height: 100% !important;\n          width: 100%;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-button {\n          display: none;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-page-dots {\n          display: none;\n          position: absolute;\n          bottom: 6px;\n          left: 50%;\n          transform: translate(-50%, 0);\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-page-dots .dot {\n            background-color: black;\n            width: 8px;\n            height: 8px;\n            margin: 0 2px;\n            vertical-align: middle;\n            transition: 0.3s ease all;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-page-dots .dot.is-selected {\n              width: 10px;\n              height: 10px;\n              background-color: white;\n}\n.modal .modal-wrap .col-content {\n      z-index: 1;\n      position: relative;\n      transition: 0.6s 0s ease margin-left;\n      margin-left: -100%;\n}\n.modal .modal-wrap .col-content .modal-content {\n        visibility: hidden;\n        display: none;\n        transition: 0.6s ease all;\n        text-align: center;\n}\n.modal .modal-wrap .col-content .modal-content.active h4:after,\n        .modal .modal-wrap .col-content .modal-content.active p:after {\n          pointer-events: none;\n          transform: scaleX(0);\n}\n.modal .modal-wrap .col-content .modal-content.active h4:before {\n          transform: scaleX(1);\n}\n.modal .modal-wrap .col-content .modal-content h4 {\n          position: relative;\n          font-size: 2em;\n          text-align: center;\n          font-weight: lighter;\n          display: inline-block;\n          padding: 0 6% 2% 6%;\n          margin-bottom: 6%;\n}\n.modal .modal-wrap .col-content .modal-content h4:before {\n            content: \"\";\n            position: absolute;\n            display: block;\n            height: 2px;\n            width: 100%;\n            bottom: 0;\n            left: 0;\n            background-color: #5f5f5f;\n            transition: 1.2s 0.12s ease-in-out all;\n            transform: scale(0);\n}\n.modal .modal-wrap .col-content .modal-content p {\n          position: relative;\n          line-height: 1.5;\n          font-size: 1.2em;\n          text-align: left;\n}\n.modal .modal-wrap .col-content .modal-content h4:after,\n        .modal .modal-wrap .col-content .modal-content p:after {\n          content: \"\";\n          position: absolute;\n          top: 0;\n          left: 0;\n          width: 100%;\n          height: 100%;\n          z-index: 2;\n          background-color: white;\n          transition: 0.6s ease all;\n          transform-origin: right;\n}\n.modal .close {\n    display: none;\n    width: 64px;\n    height: 64px;\n    position: fixed;\n    right: 16px;\n    top: 6px;\n    z-index: 12;\n    cursor: pointer;\n    background: url(" + escape(__webpack_require__(407)) + ") center/contain no-repeat;\n    transition: 0.6s ease all;\n}\n.modal .close:hover {\n      opacity: 0.6;\n      transform: scale(1.08);\n}\n", ""]);
+exports.push([module.i, "\n.modal-container:after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  z-index: 100;\n  transition: 0.3s ease all;\n  background: black url(" + escape(__webpack_require__(406)) + ") center/64px no-repeat;\n}\n.modal-container.active:after {\n  opacity: 0;\n  visibility: hidden;\n}\n.modal-container.active .modal {\n  animation: fadeInUp 1.2s 0s 1 both;\n}\n.modal-container .modal-blur {\n  visibility: hidden;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  background-color: rgba(0, 0, 0, 0.86);\n  z-index: 10;\n  transition: 0.6s ease all;\n  cursor: pointer;\n}\n.modal-fake {\n  width: 100%;\n  position: relative;\n  display: block;\n  padding-bottom: 300px;\n}\n.modal {\n  transition: 0.3s ease padding, 0.3s ease backgroundColor;\n  z-index: 100;\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  border-radius: 12px;\n  color: #5f5f5f;\n}\n@media all and (max-width: 768px) {\n.modal {\n      transition: 1.2s ease padding;\n}\n}\n.modal .sub-tit {\n    position: absolute;\n    color: white;\n    bottom: 0;\n    left: 0;\n    text-align: center;\n    font-size: 1.2em;\n    width: 100%;\n    z-index: 11;\n    opacity: 0;\n    visibility: hidden;\n    transition: 0.3s ease all;\n    font-weight: bolder;\n    transform: translate(0, 100%);\n    letter-spacing: 0.22em;\n}\n.modal:not(.active):hover .sub-tit {\n    opacity: 1;\n    visibility: visible;\n    transform: translate(0, 0%);\n}\n.modal:not(.active):hover .modal-blur {\n    visibility: visible;\n    opacity: 1;\n}\n.modal:not(.active):hover .modal-cover {\n    transform: scale(1.2);\n}\n.modal .blur-bk {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-filter: blur(10px) brightness(1.1);\n            filter: blur(10px) brightness(1.1);\n    opacity: 0;\n    transition: 0.6s 0s ease all;\n    transform: scale(1.2);\n}\n.modal.active {\n    z-index: 999;\n    background-color: white;\n    overflow-y: auto;\n    padding: 2%;\n    border-radius: 0px;\n}\n@media all and (max-width: 768px) {\n.modal.active {\n        padding-top: 64px;\n}\n}\n.modal.active .blur-bk {\n      opacity: 0.3;\n}\n.modal.active .modal-wrap .col-content {\n      margin-left: 0%;\n      transition: 0.6s 0.12s ease margin-left;\n}\n.modal.active .modal-wrap .col-content .modal-content {\n        visibility: visible;\n        display: block;\n        padding: 6%;\n}\n.modal.active .modal-wrap .col-pic .modal-cover {\n      background-size: cover !important;\n      padding-bottom: 50%;\n      position: relative;\n}\n.modal.active .modal-wrap .col-pic .modal-carousel {\n      pointer-events: inherit;\n}\n.modal.active .modal-wrap .col-pic .modal-carousel .modal-pic {\n        background: url(\"\") center/contain no-repeat;\n}\n.modal.active .modal-wrap .col-pic .modal-carousel .flickity-button,\n      .modal.active .modal-wrap .col-pic .modal-carousel .flickity-page-dots {\n        display: block;\n}\n.modal.active .close {\n      display: block;\n}\n.modal:after {\n    content: \"\";\n    height: 100%;\n    display: inline-block;\n    vertical-align: middle;\n}\n.modal .modal-wrap {\n    display: inline-block;\n    vertical-align: middle;\n    width: 100%;\n}\n.modal .modal-wrap .row {\n      -ms-flex-align: center;\n          align-items: center;\n      -ms-flex-line-pack: center;\n          align-content: center;\n}\n@media all and (max-width: 768px) {\n.modal .modal-wrap .col-pic,\n      .modal .modal-wrap .col-content {\n        -ms-flex: 0 0 100%;\n        flex: 0 0 100%;\n        max-width: 100%;\n}\n}\n.modal .modal-wrap .col-pic {\n      z-index: 2;\n      position: relative;\n}\n.modal .modal-wrap .col-pic .modal-cover {\n        display: block;\n        width: 100%;\n        transition: 0.3s ease all;\n        padding-bottom: 300px;\n        cursor: pointer;\n}\n.modal .modal-wrap .col-pic .modal-carousel {\n        position: absolute;\n        top: 0%;\n        left: 0;\n        height: 100%;\n        width: 100%;\n        pointer-events: none;\n}\n.modal .modal-wrap .col-pic .modal-carousel .modal-pic {\n          background: url(\"\") center/cover no-repeat;\n}\n.modal .modal-wrap .col-pic .modal-carousel .carousel-cell {\n          margin-right: 64px;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-enabled,\n        .modal .modal-wrap .col-pic .modal-carousel .flickity-viewport,\n        .modal .modal-wrap .col-pic .modal-carousel .flickity-slider,\n        .modal .modal-wrap .col-pic .modal-carousel .carousel-cell,\n        .modal .modal-wrap .col-pic .modal-carousel .modal-pic {\n          position: absolute;\n          top: 0%;\n          left: 0;\n          height: 100% !important;\n          width: 100%;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-button {\n          display: none;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-page-dots {\n          display: none;\n          position: absolute;\n          bottom: 6px;\n          left: 50%;\n          transform: translate(-50%, 0);\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-page-dots .dot {\n            background-color: black;\n            width: 8px;\n            height: 8px;\n            margin: 0 2px;\n            vertical-align: middle;\n            transition: 0.3s ease all;\n}\n.modal .modal-wrap .col-pic .modal-carousel .flickity-page-dots .dot.is-selected {\n              width: 10px;\n              height: 10px;\n              background-color: white;\n}\n.modal .modal-wrap .col-content {\n      z-index: 1;\n      position: relative;\n      transition: 0.6s 0s ease margin-left;\n      margin-left: -100%;\n}\n.modal .modal-wrap .col-content .modal-content {\n        visibility: hidden;\n        display: none;\n        transition: 0.6s ease all;\n        text-align: center;\n}\n.modal .modal-wrap .col-content .modal-content.active h4:after,\n        .modal .modal-wrap .col-content .modal-content.active p:after {\n          pointer-events: none;\n          transform: scaleX(0);\n}\n.modal .modal-wrap .col-content .modal-content.active h4:before {\n          transform: scaleX(1);\n}\n.modal .modal-wrap .col-content .modal-content h4 {\n          position: relative;\n          font-size: 2em;\n          text-align: center;\n          font-weight: lighter;\n          display: inline-block;\n          padding: 0 6% 2% 6%;\n          margin-bottom: 6%;\n}\n.modal .modal-wrap .col-content .modal-content h4:before {\n            content: \"\";\n            position: absolute;\n            display: block;\n            height: 2px;\n            width: 100%;\n            bottom: 0;\n            left: 0;\n            background-color: #5f5f5f;\n            transition: 1.2s 0.12s ease-in-out all;\n            transform: scale(0);\n}\n.modal .modal-wrap .col-content .modal-content p {\n          position: relative;\n          line-height: 1.5;\n          font-size: 1.2em;\n          text-align: left;\n}\n.modal .modal-wrap .col-content .modal-content h4:after,\n        .modal .modal-wrap .col-content .modal-content p:after {\n          content: \"\";\n          position: absolute;\n          top: 0;\n          left: 0;\n          width: 100%;\n          height: 100%;\n          z-index: 2;\n          background-color: white;\n          transition: 0.6s ease all;\n          transform-origin: right;\n}\n.modal .close {\n    display: none;\n    width: 64px;\n    height: 64px;\n    position: fixed;\n    right: 16px;\n    top: 6px;\n    z-index: 12;\n    cursor: pointer;\n    background: url(" + escape(__webpack_require__(407)) + ") center/contain no-repeat;\n    transition: 0.6s ease all;\n}\n.modal .close:hover {\n      opacity: 0.6;\n      transform: scale(1.08);\n}\n", ""]);
 
 // exports
 
@@ -41038,7 +41043,7 @@ module.exports = function escape(url) {
 /* 406 */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwcHgiICBoZWlnaHQ9IjIwMHB4IiAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJsZHMtcmluZyIgc3R5bGU9ImJhY2tncm91bmQ6IG5vbmU7Ij48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiBuZy1hdHRyLXI9Int7Y29uZmlnLnJhZGl1c319IiBuZy1hdHRyLXN0cm9rZT0ie3tjb25maWcuYmFzZX19IiBuZy1hdHRyLXN0cm9rZS13aWR0aD0ie3tjb25maWcud2lkdGh9fSIgZmlsbD0ibm9uZSIgcj0iMzAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxMCI+PC9jaXJjbGU+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgbmctYXR0ci1yPSJ7e2NvbmZpZy5yYWRpdXN9fSIgbmctYXR0ci1zdHJva2U9Int7Y29uZmlnLnN0cm9rZX19IiBuZy1hdHRyLXN0cm9rZS13aWR0aD0ie3tjb25maWcuaW5uZXJXaWR0aH19IiBuZy1hdHRyLXN0cm9rZS1saW5lY2FwPSJ7e2NvbmZpZy5saW5lY2FwfX0iIGZpbGw9Im5vbmUiIHI9IjMwIiBzdHJva2U9IiM2NDYwYWEiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgdHJhbnNmb3JtPSJyb3RhdGUoMzMuNzUgNTAgNTApIj48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgY2FsY01vZGU9ImxpbmVhciIgdmFsdWVzPSIwIDUwIDUwOzE4MCA1MCA1MDs3MjAgNTAgNTAiIGtleVRpbWVzPSIwOzAuNTsxIiBkdXI9IjEuNnMiIGJlZ2luPSIwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZVRyYW5zZm9ybT48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJzdHJva2UtZGFzaGFycmF5IiBjYWxjTW9kZT0ibGluZWFyIiB2YWx1ZXM9IjE4Ljg0OTU1NTkyMTUzODc2IDE2OS42NDYwMDMyOTM4NDg4Mjs5NC4yNDc3Nzk2MDc2OTM4IDk0LjI0Nzc3OTYwNzY5Mzc3OzE4Ljg0OTU1NTkyMTUzODc2IDE2OS42NDYwMDMyOTM4NDg4MiIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMS42IiBiZWdpbj0iMHMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+"
+module.exports = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwcHgiICBoZWlnaHQ9IjIwMHB4IiAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJsZHMtZWNsaXBzZSIgc3R5bGU9ImJhY2tncm91bmQ6IG5vbmU7Ij48cGF0aCBuZy1hdHRyLWQ9Int7Y29uZmlnLnBhdGhDbWR9fSIgbmctYXR0ci1maWxsPSJ7e2NvbmZpZy5jb2xvcn19IiBzdHJva2U9Im5vbmUiIGQ9Ik0xMCA1MEE0MCA0MCAwIDAgMCA5MCA1MEE0MCA0MiAwIDAgMSAxMCA1MCIgZmlsbD0iI2ZjNjM2YiIgdHJhbnNmb3JtPSJyb3RhdGUoMjgyIDUwIDUxKSI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGNhbGNNb2RlPSJsaW5lYXIiIHZhbHVlcz0iMCA1MCA1MTszNjAgNTAgNTEiIGtleVRpbWVzPSIwOzEiIGR1cj0iMXMiIGJlZ2luPSIwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZVRyYW5zZm9ybT48L3BhdGg+PC9zdmc+"
 
 /***/ }),
 /* 407 */
@@ -52257,7 +52262,10 @@ var render = function() {
           _c("div", {
             staticClass: "blur-bk",
             style: {
-              background: "url(" + _vm.item.bg + ") center/cover no-repeat"
+              background:
+                "rgba(255,255,255,1) url(" +
+                _vm.item.bg +
+                ") center/cover no-repeat"
             }
           }),
           _vm._v(" "),
@@ -52829,7 +52837,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("h2", [_vm._v("Website Gallery")]),
+      _c("h2", [_vm._v("Website..")]),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [
         _c("div", { staticClass: "row inline-btn" }, [
@@ -52906,7 +52914,7 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-center" }, [_vm._v("資料慢慢補完中..")]),
+        _vm._m(0),
         _vm._v(" "),
         _c(
           "div",
@@ -52947,7 +52955,18 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "sub-title" }, [
+      _vm._v("資料慢慢補完中..。"),
+      _c("br"),
+      _vm._v("主要負責網站切版以及API串接等")
+    ])
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -53518,7 +53537,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("h2", [_vm._v("About")]),
+      _c("h2", [_vm._v("About..")]),
       _vm._v(" "),
       _c("div", { staticClass: "content profile" }, [
         _c("div", { staticClass: "row" }, [
@@ -53548,19 +53567,28 @@ var staticRenderFns = [
       _c("h2", [_vm._v("REX")]),
       _vm._v(" "),
       _c("p", [
-        _vm._v("2015年開始玩前端到現在，約三年資歷。\n                "),
+        _vm._v(
+          "退伍後2015年開始玩前端到現在，大約三年資歷。\n                "
+        ),
         _c("br"),
-        _vm._v("喜歡玩各種特效/動態/框架。\n                "),
+        _vm._v("喜歡玩各種特效/ 動態/ 框架。\n                "),
         _c("br"),
         _vm._v("製作過許多大大小小的活動網站/官方網站，\n                "),
         _c("br"),
         _vm._v(
-          "有些活動結束了/版權問題沒辦法看到，不過至少有少數圖片留下來。\n                "
+          "有些活動結束了or版權問題沒辦法看到，不過至少有一些圖片資料留下來。\n                "
         ),
         _c("br"),
-        _vm._v("專案依客戶需求選擇框架。\n                "),
+        _vm._v(
+          "專案依客戶需求選擇框架，所以可能有些用這個，有些用那個寫。\n                "
+        ),
         _c("br"),
-        _vm._v("近期在玩Vue & React Native & pixi.js\n              ")
+        _vm._v("近期在玩Vue & React Native & pixi.js\n                "),
+        _c("br"),
+        _c("br"),
+        _vm._v(
+          "\n                興趣是健身、電影(尤其MARVEL)、打遊戲\n              "
+        )
       ])
     ])
   }
@@ -54579,10 +54607,19 @@ var render = function() {
           }
         },
         [
-          _c("router-view", {
-            staticClass: "view",
-            class: { active: _vm.open }
-          })
+          _c(
+            "router-view",
+            { staticClass: "view", class: { active: _vm.open } },
+            [
+              _c("div", { staticClass: "bar" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "bar" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "bar" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "bar" })
+            ]
+          )
         ],
         1
       )

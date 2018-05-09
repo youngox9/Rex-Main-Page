@@ -5,7 +5,7 @@
     <div class="modal" :class="{active:open}" ref="modal">
       <div class="modal-blur"  @click="onOpen()"></div>
       <div class="close" @click="onClose"></div>
-      <div class="blur-bk" :style="{background:`url(${item.bg}) center/cover no-repeat`}"></div>
+      <div class="blur-bk" :style="{background:`rgba(255,255,255,1) url(${item.bg}) center/cover no-repeat`}"></div>
       <p class="sub-tit">{{item.tit}}</p>
       <div class="modal-wrap">
         <div class="row row-no-gutter">
@@ -15,7 +15,7 @@
                 <carousel-loop :active="open">
                   <div class="modal-pic" v-for="(p, index) in item.pic" :key="index" :style="{backgroundImage:getPicBk(p)}"></div>
                 </carousel-loop>
-              </div>
+              </div> 
             </div>
           </div>
           <div class="col col-content"  ref="content">
@@ -168,14 +168,16 @@ $height: 300px;
     height: 100%;
     width: 100%;
     z-index: 100;
+    transition: 0.3s ease all;
     background: black url("../../img/loading.svg")center/64px no-repeat;
   }
   &.active {
     &:after {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
     }
     .modal {
-      animation: fadeIn 1.2s 0s 1 both;
+      animation: fadeInUp 1.2s 0s 1 both;
     }
   }
   .modal-blur {
@@ -199,7 +201,7 @@ $height: 300px;
   padding-bottom: $height;
 }
 .modal {
-  transition: 0.3s ease padding;
+  transition: 0.3s ease padding, 0.3s ease backgroundColor;
   z-index: 100;
   overflow: hidden;
   position: absolute;
@@ -209,6 +211,9 @@ $height: 300px;
   width: 100%;
   border-radius: 12px;
   color: #5f5f5f;
+  @media all and(max-width:768px) {
+    transition: 1.2s ease padding;
+  }
   .sub-tit {
     position: absolute;
     color: white;
@@ -248,7 +253,7 @@ $height: 300px;
     height: 100%;
     filter: blur(10px) brightness(1.1);
     opacity: 0;
-    transition: 1.2s ease all;
+    transition: 0.6s 0s ease all;
     transform: scale(1.2);
   }
   &.active {
@@ -275,7 +280,7 @@ $height: 300px;
       }
       .col-pic {
         .modal-cover {
-          background-size: contain !important;
+          background-size: cover !important;
           // height: auto !important;
           padding-bottom: 50%;
           position: relative;
