@@ -12,8 +12,8 @@
       <ul class="nav">
         <li><router-link to="/about">About</router-link></li>
         <li><router-link to="/">Website</router-link></li>
-        <li><router-link to="/banner">Banner</router-link></li>
-        <li><router-link to="/character">Character</router-link></li>
+        <!-- <li><router-link to="/banner">Banner</router-link></li>
+        <li><router-link to="/character">Character</router-link></li> -->
       </ul>
     </div>
 </template>
@@ -137,6 +137,12 @@ $navWidth: 200px;
         color: black;
         text-decoration: none !important;
         cursor: pointer;
+        transition: 0.3s ease all;
+        &.router-link-exact-active {
+          background-color: black;
+          color: white;
+          box-shadow: 4px 4px 8px #000;
+        }
       }
       &:after {
         content: "";
@@ -150,6 +156,7 @@ $navWidth: 200px;
         transition: 0.3s ease all;
         position: absolute;
       }
+
       &:hover {
         &:after {
           transform: translate(-50%, 0) scale(1);

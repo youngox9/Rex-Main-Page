@@ -24,10 +24,8 @@ module.exports = {
     './src/main.js'
   ],
   output: {
-    path: config.build.assetsRoot,
+    // path: config.build.assetsRoot,
     filename: 'bundle.js',
-    publicPath: process.env.NODE_ENV === 'production' ?
-      config.build.assetsPublicPath : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -37,6 +35,9 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': require('../config/dev.env')
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

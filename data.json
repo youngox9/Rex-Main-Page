@@ -5,7 +5,7 @@
         "date": "2016/07/02",
         "pic": ["img/web01.jpg", "img/web01.jpg", "img/web01.jpg", "img/web01.jpg", "img/web01.jpg"],
         "tit": "Moist Diane 黛絲恩",
-        "des": "<p>網址：<a target='_blank' href='http://www.moist-diane.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2016/07</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='http://www.moist-diane.com.tw/'>官方網站</a></p><p>網站狀況：線上</p>"
     }, {
         "uid": "2",
         "type": "1",
@@ -13,7 +13,7 @@
         "date": "2016/07/28",
         "pic": ["img/web02.jpg", "img/web02.jpg", "img/web02.jpg", "img/web02.jpg", "img/web02.jpg"],
         "tit": "ASICS 亞瑟士台灣",
-        "des": "<p>網址：<a target='_blank' href='https://www.asics.com/tw/zh-tw'>官方網站(已改版)</a></p><p>網址：<a target='_blank' href=''>亞瑟士課程</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2016/07</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='https://www.asics.com/tw/zh-tw'>官方網站(已改版)</a></p><p>網址：<a target='_blank' href=''>亞瑟士課程</a></p>"
     }, {
         "uid": "3",
         "type": "2",
@@ -21,7 +21,7 @@
         "date": "2016/07/28",
         "pic": ["img/web03.jpg", "img/web03.jpg", "img/web03.jpg", "img/web03.jpg", "img/web03.jpg"],
         "tit": "KOTEX靠得住",
-        "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20160605_kotex/'>活動連結(活動已結束)</a></p><p>網站狀況：下線</p><p>製作人：eray</p><p>製作日期：2016/06/05</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20160605_kotex/'>活動連結(活動已結束)</a></p><p>網站狀況：下線</p>"
     }, {
         "uid": "4",
         "type": "1",
@@ -29,7 +29,7 @@
         "date": "2016/07/28",
         "pic": ["img/web04.jpg"],
         "tit": "中鋼運通股份有限公司",
-        "des": "<p>網址：<a target='_blank' href='http://www.csebulk.com.tw/'>活動連結(活動已結束)</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2016/12/22</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='http://www.csebulk.com.tw/'>活動連結(活動已結束)</a></p><p>網站狀況：線上</p>"
     }, {
         "uid": "5",
         "type": "2",
@@ -37,7 +37,7 @@
         "date": "2016/07/28",
         "pic": ["img/web05.jpg"],
         "tit": "【鋼の探偵】陽岱鋼身陷竊案謎團",
-        "des": "<p>網址：<a target='_blank' href='http://grandlancer.mitsubishi-motors.com.tw/detective/'>活動連結(活動已結束)</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/02/14</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='http://grandlancer.mitsubishi-motors.com.tw/detective/'>活動連結(活動已結束)</a></p>"
     }, {
         "uid": "6",
         "type": "1",
@@ -45,7 +45,7 @@
         "date": "2016/07/28",
         "pic": ["img/web06.jpg"],
         "tit": "emoving 電動機車",
-        "des": "<p>網址：<a target='_blank' href='http://www.e-moving.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/06/27</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='http://www.e-moving.com.tw/'>官方網站</a></p><p>網站狀況：線上</p>"
     }, {
         "uid": "7",
         "type": "1",
@@ -53,7 +53,7 @@
         "date": "2016/07/28",
         "pic": ["img/web07.jpg"],
         "tit": "朱志康空間規劃",
-        "des": "<p>網址：<a target='_blank' href='http://www.kang.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/06/27</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='http://www.kang.com.tw/'>官方網站</a></p><p>網站狀況：線上</p>"
     },
     {
         "uid": "8",
@@ -62,6 +62,77 @@
         "date": "2017/09/27",
         "pic": ["img/web08.jpg"],
         "tit": "Haagen Dazs繽紛水果嘉年華",
-        "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20170927_dazs/'>官方網站</a></p><p>網站狀況：下線</p><p>製作人：eray</p><p>製作日期：2017/06/27</p><p>簡介：</p>"
+        "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20170927_dazs/'>官方網站</a></p><p>網站狀況：下線</p>"
+    },
+    {
+        "uid": "9",
+        "type": "1",
+        "bg": "img/web09a.jpg",
+        "date": "2017/09/27",
+        "pic": ["img/web09.jpg"],
+        "tit": "能恩非水解3 消化再升級",
+        "des": "<p>網址：<a target='_blank' href='https://nan3.nestlebaby.com.tw/'>官方網站</a></p><p>網站狀況：線上</p><p>製作人：eray</p><p>製作日期：2017/08/21</p><p>簡介：</p>"
+    }, {
+        "uid": "10",
+        "type": "2",
+        "bg": "img/web10a.jpg",
+        "date": "2016/03/08",
+        "pic": ["img/web10.jpg"],
+        "tit": "克寧 窈窕懶人包",
+        "des": "<p>網址：<a target='_blank' href=''>活動網站</a></p><p>網站狀況：已下架</p>"
+    },
+    {
+        "uid": "11",
+        "type": "1",
+        "bg": "img/web11a.jpg",
+        "date": "2016/03/08",
+        "pic": ["img/web11.jpg"],
+        "tit": "G-SHOCK",
+        "des": "<p>網址：<a target='_blank' href=''>活動網站</a></p><p>網站狀況：已下架</p>"
+    },
+    {
+        "uid": "12",
+        "type": "2",
+        "bg": "img/web12a.jpg",
+        "date": "2018/04/19",
+        "pic": ["img/web12.jpg"],
+        "tit": "貓妻心理學",
+        "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180419_march/'>活動網站</a></p><p>網站狀況：上限中</p>"
+    },
+    {
+        "uid": "13",
+        "type": "2",
+        "bg": "img/web13.jpg",
+        "date": "2018/04/19",
+        "pic": ["img/web13.jpg"],
+        "tit": "熊寶貝醫美診所",
+        "des": "<p>網址：<a target='_blank' href='https://www.snuggle.com.tw/2016Dr.snuggle/index.html'>活動網站</a></p><p>網站狀況：上限中</p>"
+    },
+    {
+        "uid": "14",
+        "type": "1",
+        "bg": "img/web14.jpg",
+        "date": "2018/04/19",
+        "pic": ["img/web14.jpg"],
+        "tit": "鞋生活APP",
+        "des": "<p>網址：<a target='_blank' href='https://www.snuggle.com.tw/2016Dr.snuggle/index.html'>WEB APP</a></p><p>上線</p>"
+    },
+    {
+        "uid": "15",
+        "type": "2",
+        "bg": "img/web15.jpg",
+        "date": "2018/04/19",
+        "pic": ["img/web15.jpg"],
+        "tit": "元山家電",
+        "des": "<p>網址：<a target='_blank' href='http://www.yensun.com.tw/index.html'>官方網站</a></p><p>上線</p>"
+    },
+    {
+        "uid": "16",
+        "type": "2",
+        "bg": "img/web16a.jpg",
+        "date": "2018/03/20",
+        "pic": ["img/web16.jpg"],
+        "tit": "元山家崑山科技大學 107級視覺傳達設計系畢業製作─來噪電",
+        "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180426_ksu/'>官方網站</a></p><p>上線</p>"
     }
 ]

@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar :open="open" :openevent="toggleNav"/>
-    <transition name="router-anim" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutLeft">
+    <transition name="router-anim" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutUp">
         <router-view class="view" :class="{active:open}"/>
     </transition>
   </div>

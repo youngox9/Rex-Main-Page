@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="container" >
-        <h2>About</h2>
+       
         <div class="content">
-          
+           <h2>Banner</h2>
         </div>
     </div>
   </div>

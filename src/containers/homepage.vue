@@ -20,6 +20,7 @@
                   </button>
               </div>
             </div>
+            <p class="text-center">資料慢慢補完中..</p>
             <div class="packery-container" ref="container">
                 <div class="packery-item" v-for="item in list" :key="item.uid">
                   <modal :item="item"></modal>
@@ -48,7 +49,7 @@ export default {
   },
   data() {
     return {
-      pageCount: 5,
+      pageCount: 10,
       page: 0,
       type: 0,
       open: false,
@@ -122,6 +123,7 @@ h2 {
 }
 .inline-btn {
   .btn {
+    cursor: pointer;
     font-size: 1.2em;
     width: 100%;
     border: 1px solid white;
@@ -135,6 +137,12 @@ h2 {
     border: 1px solid white;
     margin-bottom: 4%;
     position: relative;
+    transition: 0.3s ease all;
+    &.active {
+      border-color: white;
+      background-color: white;
+      color: black;
+    }
     input[type="radio"] {
       width: 100%;
       height: 100%;

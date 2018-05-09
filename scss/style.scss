@@ -1,4 +1,5 @@
 @import 'utilities';
+@import url("https://fonts.googleapis.com/css?family=Do+Hyeon");
 @font-face {
   font-family: 'cwTeXHei';
   font-style: normal;
@@ -10,14 +11,15 @@
 // 
 * {
   box-sizing: border-box;
-  -webkit-box-sizing: border-box; // font-family: 'cwTeXHei', 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif';
-  font-family: 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif';
+  -webkit-box-sizing: border-box;
+  font-family: 'Do Hyeon', 'cwTeXHei', 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif'; // font-family: 'Microsoft JhengHei', 'Helvetica', 'Arial', 'sans-serif';
 }
 
 html,
 body {
   color: $root-black;
   font-size: 1rem;
+  color: white;
   background-color: black;
   @media (max-width: $md) {
     font-size: 0.8rem;

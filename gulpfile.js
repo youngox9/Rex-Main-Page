@@ -103,7 +103,7 @@ gulp.task('default', function () {
 //gulp run watch with autoprefix
 gulp.task('dev', function () {
     gulp.run('watch-dev');
-    // gulp.run('webserver');
+    gulp.run('webserver');
     gulp.run('webpack');
 });
 

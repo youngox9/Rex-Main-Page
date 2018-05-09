@@ -194,6 +194,7 @@ $height: 300px;
   height: 100%;
   width: 100%;
   border-radius: 12px;
+  color: #5f5f5f;
   .sub-tit {
     position: absolute;
     color: white;
@@ -404,7 +405,7 @@ $height: 300px;
           font-size: 2em;
           text-align: center;
           font-weight: lighter;
-          color: #5f5f5f;
+
           // letter-spacing: 0.12em;
           display: inline-block;
           padding: 0 6% 2% 6%;
