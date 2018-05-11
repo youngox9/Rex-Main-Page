@@ -1,13 +1,9 @@
 <template>
   <div>
+    <loader-item src="../img/rex.png" :progress="progress"></loader-item>
     <navbar :open="open" :openevent="toggleNav"/>
     <transition name="router-anim" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutUp">
-        <router-view class="view" :class="{active:open}">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </router-view>
+        <router-view class="view" :class="{active:open}"></router-view>
     </transition>
   </div>
 </template>
@@ -15,17 +11,32 @@
 <script>
 import navbar from "./containers/navbar";
 import homepage from "./containers/navbar";
+import LoaderItem from "./components/LoaderItem";
+
+import imagesloaded from "imagesloaded";
 window.fetch = require("isomorphic-fetch");
 export default {
   name: "app",
   data() {
     return {
-      open: false
+      open: false,
+      progress: 0
     };
   },
+  watch: {},
   components: {
     homepage,
-    navbar
+    navbar,
+    LoaderItem
+  },
+  mounted() {
+    const imgLoaded = imagesloaded(document.querySelector("body"));
+    imgLoaded.on("always", instance => {
+      console.log(instance);
+    });
+    setTimeout(() => {
+      this.progress = 1;
+    }, 1000);
   },
   methods: {
     toggleNav() {

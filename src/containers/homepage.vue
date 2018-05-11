@@ -41,6 +41,7 @@ import Vue from "vue";
 import Packery from "packery";
 import imagesloaded from "imagesloaded";
 import modal from "../components/modal";
+
 import Ripple from "vue-ripple-directive";
 
 Vue.directive("ripple", Ripple);
@@ -53,7 +54,7 @@ export default {
   data() {
     return {
       search: "",
-      pageCount: 20,
+      pageCount: 10,
       page: 0,
       type: 0,
       open: false,
@@ -64,17 +65,20 @@ export default {
       data: []
     };
   },
-  mounted() {
-    this.container = this.$refs.container;
+  created() {
     fetch("data.json", { method: "get" })
       .then(response => response.json())
       .then(data => {
         this.data = data;
       });
   },
+  mounted() {
+    this.container = this.$refs.container;
+  },
   updated() {
     this.init();
     this.updatePackery();
+    this.progress = 1;
   },
   computed: {
     tempList() {
