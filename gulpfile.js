@@ -77,7 +77,7 @@ gulp.task('webserver', function () {
         .src('.')
         .pipe(webserver({
             // https: true,
-            port: 8080,
+            port: 8012,
             // livereload: true,
             directoryListing: false,
             open: true
@@ -93,7 +93,7 @@ gulp.task('watch', function () {
 gulp.task('watch-dev', function () {
     gulp.watch('scss/**/*.scss', ['sass'])
 });
-//gulp run watch with NO-autoprefix
+//gulp run watch with no-autoprefix
 gulp.task('default', function () {
     gulp.run('watch');
     // gulp.run('webserver');
