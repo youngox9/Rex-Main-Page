@@ -83,6 +83,7 @@ export default {
         this.flickity.playPlayer();
       } else {
         this.flickity.stopPlayer();
+        this.flickity.select(0);
       }
     }
   }

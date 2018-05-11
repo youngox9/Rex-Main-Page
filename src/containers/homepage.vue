@@ -20,7 +20,11 @@
                   </button>
               </div>
             </div>
-            <p class="sub-title">資料慢慢補完中..。<br>主要負責網站切版以及API串接等</p>
+            <div class="search-container">
+              <input type="text" v-model="search" placeholder="SEARCH"/>
+            </div>
+            <p class="sub-title">這些是我從以前到現在所負責的網站切版以及API串接，有些可能因版權或是年代久遠而無法放上，以下僅供展示使用。</p>
+            <p class="text-left">total-count:{{data.length}}</p>
             <div class="packery-container" ref="container">
                 <div class="packery-item" v-for="item in list" :key="item.uid">
                   <modal :item="item"></modal>
@@ -48,7 +52,8 @@ export default {
   },
   data() {
     return {
-      pageCount: 10,
+      search: "",
+      pageCount: 20,
       page: 0,
       type: 0,
       open: false,
@@ -69,14 +74,18 @@ export default {
   },
   updated() {
     this.init();
-    // this.updatePackery();
+    this.updatePackery();
   },
   computed: {
     tempList() {
-      return this.data.filter(d => {
-        if (this.type === 0) return true;
-        return d.type == this.type;
-      });
+      return this.data
+        .filter(d => {
+          if (this.type === 0) return true;
+          return d.type == this.type;
+        })
+        .filter(d => {
+          return d.tit.indexOf(this.search) > -1;
+        });
     },
     list() {
       const start = this.page * this.pageCount;
@@ -114,6 +123,32 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.search-container {
+  cursor: pointer;
+  font-size: 1.2em;
+  width: 100%;
+  border: 1px solid white;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 2em;
+  color: white;
+  border: 1px solid white;
+  margin-bottom: 4%;
+  position: relative;
+  transition: 0.3s ease all;
+  padding: 6px 12px;
+  input {
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    line-height: 1.5;
+    background-color: transparent;
+    color: white;
+  }
+}
 .sub-title {
   text-align: center;
   margin: 24px 0;

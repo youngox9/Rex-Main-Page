@@ -3,14 +3,11 @@ import Router from 'vue-router';
 import homepage from '../containers/homepage';
 import notfound from '../containers/notfound';
 import about from '../containers/about';
-import banner from '../containers/banner';
-import character from '../containers/character';
 Vue.use(Router);
 
 export default new Router({
   // mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'homepage',
       component: homepage
@@ -21,20 +18,10 @@ export default new Router({
       component: about
     },
     {
-      path: '/banner',
-      name: 'banner',
-      component: banner
-    },
-    {
-      path: '/character',
-      name: 'character',
-      component: character
-    },
-    {
       path: '*',
       name: 'notfound',
       component: notfound
     },
-    
+
   ],
 });
