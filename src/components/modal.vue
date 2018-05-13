@@ -57,7 +57,7 @@ export default {
       loaded: false,
       open: false,
       complete: false,
-      imageLoaded: false
+      imageLoaded: true
     };
   },
   created() {},
