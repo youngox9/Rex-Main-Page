@@ -133,6 +133,14 @@ export default {
       const _self = this;
       if (!this.open) {
         this.open = true;
+        if ("gtag" in window) {
+          const event_category = "modal";
+          const event_label = this.item.uid;
+          gtag("event", "click", {
+            event_category,
+            event_label
+          });
+        }
         $("html,body").css("overflow", "hidden");
         TweenMax.fromTo(
           this.$modal,

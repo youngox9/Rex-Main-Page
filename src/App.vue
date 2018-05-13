@@ -1,6 +1,6 @@
 <template>
   <div>
-    <loader-item src="../img/rex.png" :progress="progress"></loader-item>
+    <loader-item src="../img/loader.png" :progress="progress"></loader-item>
     <navbar :open="open" :openevent="toggleNav"/>
     <transition name="router-anim" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutUp">
         <router-view class="view" :class="{active:open}"></router-view>
@@ -30,10 +30,10 @@ export default {
     LoaderItem
   },
   mounted() {
-    const imgLoaded = imagesloaded(document.querySelector("body"));
-    imgLoaded.on("always", instance => {
-      console.log(instance);
-    });
+    // const imgLoaded = imagesloaded(document.querySelector("body"));
+    // imgLoaded.on("always", instance => {
+    //   console.log(instance);
+    // });
     setTimeout(() => {
       this.progress = 1;
     }, 1000);
