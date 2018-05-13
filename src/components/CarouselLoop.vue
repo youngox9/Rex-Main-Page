@@ -80,10 +80,11 @@ export default {
     },
     active(val, oldval) {
       if (val) {
+        this.flickity.stopPlayer();
         this.flickity.playPlayer();
       } else {
-        this.flickity.stopPlayer();
         this.flickity.select(0);
+        this.flickity.stopPlayer();
       }
     }
   }
