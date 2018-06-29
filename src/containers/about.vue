@@ -18,7 +18,7 @@
                   <br/>專案依客戶需求選擇框架，所以可能有些用這個，有些用那個寫。
                   <br/>近期在玩Vue & React Native & pixi.js
                   <br/><br/>
-                  興趣是健身、電影(尤其MARVEL)、打LOL、玩SWITCH
+                  興趣是健身、電影、打LOL、玩SWITCH
                 </p>
             </div>
           </div>

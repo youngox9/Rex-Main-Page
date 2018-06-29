@@ -161,5 +161,32 @@
         "pic": ["img/web19-1.jpg", "img/web19-2.jpg", "img/web19-3.jpg", "img/web19-4.jpg", "img/web19-5.jpg", "img/web19-6.jpg"],
         "tit": "楊式速讀",
         "des": "<p>網址：<a target='_blank' href='http://ssl.fla.com.tw/yangs_web/index.php'>官方網站</a></p><p>說明：早期製作的網站，較為陽春的網站版型。使用jquery + php，當時也還在用purecss + compass</p>"
+    },
+    {
+        "uid": "20",
+        "type": "1",
+        "bg": "",
+        "date": "2018/06/28",
+        "pic": ["img/web20-1.jpg"],
+        "tit": "三菱汽車",
+        "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180626_30/'>活動網站</a></p><p>說明：近期製作的網站，為三菱汽車的官網內頁</p>"
+    },
+    {
+        "uid": "21",
+        "type": "1",
+        "bg": "",
+        "date": "2018/06/15",
+        "pic": ["img/web21-1.png"],
+        "tit": "Haagen-dazs",
+        "des": "<p>網址：<a target='_blank' href='http://event.eray.tw///y_20180611_dazs/'>活動網站</a></p><p>說明：由於之前活動辦得不錯，近期又在合作中的活動網站。使用Vue + Router + Redux</p>"
+    },
+    {
+        "uid": "22",
+        "type": "2",
+        "bg": "",
+        "date": "2018/06/03",
+        "pic": ["img/web22-1.jpg"],
+        "tit": "三菱青春還鄉",
+        "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180613_30_web/'>官方網站</a></p><p>說明：三菱汽車重新打掉重做的網站。使用Vue</p>"
     }
 ]
