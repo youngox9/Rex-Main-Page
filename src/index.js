@@ -1,17 +1,10 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import router from './router'
-import App from './App'
+import React from 'react';
+import { render } from 'react-dom';
+import App from './App';
 
-import "../scss/style.scss";
 
-Vue.use(VueRouter)
+function Main(props) {
+    return <App />;
+}
 
-new Vue({
-    el: '#app',
-    router,
-    template: '<App/>',
-    components: {
-        App,
-    }
-});
+render(<Main />, document.getElementById('app'));
