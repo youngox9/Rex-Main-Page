@@ -2,11 +2,11 @@
     {
         "uid": "1",
         "type": "1",
-        "bg": "../src/static/images/web01a.jpg",
+        "bg": "src/static/images/web01a.jpg",
         "date": "2016/07/02",
         "pic": [
-            "../src/static/images/web01-1.jpg",
-            "../src/static/images/web01-2.jpg"
+            "src/static/images/web01-1.jpg",
+            "src/static/images/web01-2.jpg"
         ],
         "title": "Moist Diane 黛絲恩 官方網站",
         "des": "<p>網址：<a target='_blank' href='http://www.moist-diane.com.tw/'>官方網站(線上)</a></p><p>說明：很久以前的案子，沒有RWD，僅使用Jquery進行製作。</p>"
@@ -14,12 +14,12 @@
     {
         "uid": "2",
         "type": "1",
-        "bg": "../src/static/images/web02a.jpg",
+        "bg": "src/static/images/web02a.jpg",
         "date": "2016/07/28",
         "pic": [
-            "../src/static/images/web02-1.jpg",
-            "../src/static/images/web02-2.jpg",
-            "../src/static/images/web02-3.jpg"
+            "src/static/images/web02-1.jpg",
+            "src/static/images/web02-2.jpg",
+            "src/static/images/web02-3.jpg"
         ],
         "title": "ASICS 亞瑟士台灣",
         "des": "<p>網址：<a target='_blank' href='https://www.asics.com/tw/zh-tw'>官方網站(線上/已改版)</a></p><p>說明：亞瑟士官網，不過之後他們好像換團隊製作了。不過頁面似乎沒有改很多。另外還有製作課程報名網站</p>"
@@ -27,12 +27,12 @@
     {
         "uid": "3",
         "type": "2",
-        "bg": "../src/static/images/web03a.jpg",
+        "bg": "src/static/images/web03a.jpg",
         "date": "2016/07/28",
         "pic": [
-            "../src/static/images/web03-1.jpg",
-            "../src/static/images/web03-2.jpg",
-            "../src/static/images/web03-3.jpg"
+            "src/static/images/web03-1.jpg",
+            "src/static/images/web03-2.jpg",
+            "src/static/images/web03-3.jpg"
         ],
         "title": "KOTEX靠得住",
         "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20160605_kotex/'>備份連結(活動已結束)</a></p><p>說明：這個活動已經結束了。之前做的互動式遊戲，利用canvas製作，可以自己選擇貼圖貼在自己選擇的照片上，上傳後再分享在FB。下方使用瀑布流顯示大家的作品</p>"
@@ -40,12 +40,12 @@
     {
         "uid": "4",
         "type": "1",
-        "bg": "../src/static/images/web04a.jpg",
+        "bg": "src/static/images/web04a.jpg",
         "date": "2016/07/28",
         "pic": [
-            "../src/static/images/web04-1.jpg",
-            "../src/static/images/web04-2.jpg",
-            "../src/static/images/web04-3.jpg"
+            "src/static/images/web04-1.jpg",
+            "src/static/images/web04-2.jpg",
+            "src/static/images/web04-3.jpg"
         ],
         "title": "中鋼運通股份有限公司",
         "des": "<p>網址：<a target='_blank' href='http://www.csebulk.com.tw/'>官方網站</a></p><p>說明：中鋼運通的官方網站，使用webpack封裝js。</p>"
@@ -53,14 +53,14 @@
     {
         "uid": "5",
         "type": "2",
-        "bg": "../src/static/images/web05a.jpg",
+        "bg": "src/static/images/web05a.jpg",
         "date": "2016/07/28",
         "pic": [
-            "../src/static/images/web05-1.jpg",
-            "../src/static/images/web05-2.jpg",
-            "../src/static/images/web05-3.jpg",
-            "../src/static/images/web05-4.jpg",
-            "../src/static/images/web05-5.jpg"
+            "src/static/images/web05-1.jpg",
+            "src/static/images/web05-2.jpg",
+            "src/static/images/web05-3.jpg",
+            "src/static/images/web05-4.jpg",
+            "src/static/images/web05-5.jpg"
         ],
         "title": "【鋼の探偵】陽岱鋼身陷竊案謎團",
         "des": "<p>網址：<a target='_blank' href='http://grandlancer.mitsubishi-motors.com.tw/detective/'>備份連結(活動已結束)</a></p><p>說明：很有趣的活動網站，當時還配合youtuber影片猜真兇來抽獎。使用webpack封裝js</p>"
@@ -68,13 +68,13 @@
     {
         "uid": "6",
         "type": "1",
-        "bg": "../src/static/images/web06a.jpg",
+        "bg": "src/static/images/web06a.jpg",
         "date": "2016/07/28",
         "pic": [
-            "../src/static/images/web06-1.jpg",
-            "../src/static/images/web06-2.jpg",
-            "../src/static/images/web06-3.jpg",
-            "../src/static/images/web06-4.jpg"
+            "src/static/images/web06-1.jpg",
+            "src/static/images/web06-2.jpg",
+            "src/static/images/web06-3.jpg",
+            "src/static/images/web06-4.jpg"
         ],
         "title": "emoving 電動機車",
         "des": "<p>網址：<a target='_blank' href='http://www.e-moving.com.tw/'>官方網站</a></p><p>描述：EMOVING的官方網站，跟後端配合使用PHP + VUEJS製作。</p>"
@@ -82,13 +82,13 @@
     {
         "uid": "7",
         "type": "1",
-        "bg": "../src/static/images/web07a.jpg",
+        "bg": "src/static/images/web07a.jpg",
         "date": "2016/07/28",
         "pic": [
-            "../src/static/images/web07-1.jpg",
-            "../src/static/images/web07-2.jpg",
-            "../src/static/images/web07-3.jpg",
-            "../src/static/images/web07-4.jpg"
+            "src/static/images/web07-1.jpg",
+            "src/static/images/web07-2.jpg",
+            "src/static/images/web07-3.jpg",
+            "src/static/images/web07-4.jpg"
         ],
         "title": "朱志康空間規劃",
         "des": "<p>網址：<a target='_blank' href='http://www.kang.com.tw/'>官方網站</a></p>"
@@ -96,15 +96,15 @@
     {
         "uid": "8",
         "type": "2",
-        "bg": "../src/static/images/web08a.jpg",
+        "bg": "src/static/images/web08a.jpg",
         "date": "2017/09/27",
         "pic": [
-            "../src/static/images/web08-1.jpg",
-            "../src/static/images/web08-2.jpg",
-            "../src/static/images/web08-3.jpg",
-            "../src/static/images/web08-4.jpg",
-            "../src/static/images/web08-5.jpg",
-            "../src/static/images/web08-6.jpg"
+            "src/static/images/web08-1.jpg",
+            "src/static/images/web08-2.jpg",
+            "src/static/images/web08-3.jpg",
+            "src/static/images/web08-4.jpg",
+            "src/static/images/web08-5.jpg",
+            "src/static/images/web08-6.jpg"
         ],
         "title": "Haagen Dazs繽紛水果嘉年華",
         "des": "<p>網址：<a target='_blank' href='https://event.eray.tw/y_20170927_dazs/'>備份連結(活動已結束)</a></p><p>說明：很有趣的活動網站，只能用手機開。<br/>可以選擇喜歡的口味進行遊戲。利用水平儀功能先搖晃手機把叢林搖開，接著把水果丟到冰淇淋裡參加抽獎。當時很多人參加完遊戲。</p>"
@@ -115,9 +115,9 @@
         "bg": "",
         "date": "2017/09/27",
         "pic": [
-            "../src/static/images/web09-1.jpg",
-            "../src/static/images/web09-2.jpg",
-            "../src/static/images/web09-3.jpg"
+            "src/static/images/web09-1.jpg",
+            "src/static/images/web09-2.jpg",
+            "src/static/images/web09-3.jpg"
         ],
         "title": "能恩非水解3 消化再升級",
         "des": "<p>網址：<a target='_blank' href='https://nan3.nestlebaby.com.tw/'>官方網站/活動網站</a></p><p>說明：已經改版了好幾次，現在有經由其他同仁接手。<br/>除了首頁以外還可以進行遊戲。可以上傳自己喜歡的照片，後製後上傳分享參加活動。</p>"
@@ -128,13 +128,13 @@
         "bg": "",
         "date": "2016/03/08",
         "pic": [
-            "../src/static/images/web10-1.jpg",
-            "../src/static/images/web10-2.jpg",
-            "../src/static/images/web10-3.jpg",
-            "../src/static/images/web10-4.jpg",
-            "../src/static/images/web10-5.jpg",
-            "../src/static/images/web10-6.jpg",
-            "../src/static/images/web10-7.jpg"
+            "src/static/images/web10-1.jpg",
+            "src/static/images/web10-2.jpg",
+            "src/static/images/web10-3.jpg",
+            "src/static/images/web10-4.jpg",
+            "src/static/images/web10-5.jpg",
+            "src/static/images/web10-6.jpg",
+            "src/static/images/web10-7.jpg"
         ],
         "title": "克寧 窈窕懶人包",
         "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20160308_klim/'>備份連結(活動已結束)</a></p><p>說明：很久很久以前做的活動網站，沒有RWD，卻有一堆動態必須製作。可以報名活動參加抽獎</p>"
@@ -142,13 +142,13 @@
     {
         "uid": "11",
         "type": "1",
-        "bg": "../src/static/images/web11a.jpg",
+        "bg": "src/static/images/web11a.jpg",
         "date": "2016/03/08",
         "pic": [
-            "../src/static/images/web11-1.jpg",
-            "../src/static/images/web11-2.jpg",
-            "../src/static/images/web11-3.jpg",
-            "../src/static/images/web11-4.jpg"
+            "src/static/images/web11-1.jpg",
+            "src/static/images/web11-2.jpg",
+            "src/static/images/web11-3.jpg",
+            "src/static/images/web11-4.jpg"
         ],
         "title": "G-SHOCK/BABY-G",
         "des": "<p>網址：<a target='_blank' href=''>活動網站</a></p><p>說明：台灣版的G-SHOCK網站，基本上需求是要做得跟日本G-SHOCK做得一模一樣。</p>"
@@ -156,14 +156,14 @@
     {
         "uid": "12",
         "type": "2",
-        "bg": "../src/static/images/web12a.jpg",
+        "bg": "src/static/images/web12a.jpg",
         "date": "2018/04/19",
         "pic": [
-            "../src/static/images/web12-1.jpg",
-            "../src/static/images/web12-2.jpg",
-            "../src/static/images/web12-3.jpg",
-            "../src/static/images/web12-4.jpg",
-            "../src/static/images/web12-5.jpg"
+            "src/static/images/web12-1.jpg",
+            "src/static/images/web12-2.jpg",
+            "src/static/images/web12-3.jpg",
+            "src/static/images/web12-4.jpg",
+            "src/static/images/web12-5.jpg"
         ],
         "title": "貓妻心理學",
         "des": "<p>網址：<a target='_blank' href='http://event.nissan.com.tw/MARCH_meow/'>活動網站</a></p><p>說明：近期做的AWD網站，由Vue + Pixi.js + createJs製作。</p>"
@@ -174,12 +174,12 @@
         "bg": "",
         "date": "2018/04/19",
         "pic": [
-            "../src/static/images/web13-1.jpg",
-            "../src/static/images/web13-2.jpg",
-            "../src/static/images/web13-3.jpg",
-            "../src/static/images/web13-4.jpg",
-            "../src/static/images/web13-5.jpg",
-            "../src/static/images/web13-6.jpg"
+            "src/static/images/web13-1.jpg",
+            "src/static/images/web13-2.jpg",
+            "src/static/images/web13-3.jpg",
+            "src/static/images/web13-4.jpg",
+            "src/static/images/web13-5.jpg",
+            "src/static/images/web13-6.jpg"
         ],
         "title": "熊寶貝醫美診所",
         "des": "<p>網址：<a target='_blank' href='https://www.snuggle.com.tw/2016Dr.snuggle/index.html'>活動網站</a></p><p>熊寶貝的RWD活動網站，當時使用Angular(1.0)製作，可以進行發問，並參加抽獎。</p>"
@@ -187,15 +187,15 @@
     {
         "uid": "14",
         "type": "1",
-        "bg": "../src/static/images/web14.jpg",
+        "bg": "src/static/images/web14.jpg",
         "date": "2018/04/19",
         "pic": [
-            "../src/static/images/web14-6.jpg",
-            "../src/static/images/web14-2.jpg",
-            "../src/static/images/web14-3.jpg",
-            "../src/static/images/web14-4.jpg",
-            "../src/static/images/web14-5.jpg",
-            "../src/static/images/web14-1.jpg"
+            "src/static/images/web14-6.jpg",
+            "src/static/images/web14-2.jpg",
+            "src/static/images/web14-3.jpg",
+            "src/static/images/web14-4.jpg",
+            "src/static/images/web14-5.jpg",
+            "src/static/images/web14-1.jpg"
         ],
         "title": "鞋生活APP",
         "des": "<p>網址：<a target='_blank' href='https://itunes.apple.com/tw/app/%E9%9E%8B%E7%94%9F%E6%B4%BBapp/id1353356591?mt=8'>Apple Store</a></p><p>網址：<a target='_blank' href='https://appadvice.com/app/e9-9e-8b-e7-94-9f-e6-b4-bbapp/1353356591'>網站</a></p><p>說明：使用Onsen-UI + ReactJS製作的Web app，具備多項功能的購物app，分為消費者/設計師兩款app，專賣鞋子，也可以進行訂做。</p>"
@@ -206,12 +206,12 @@
         "bg": "",
         "date": "2018/04/19",
         "pic": [
-            "../src/static/images/web15-1.jpg",
-            "../src/static/images/web15-2.jpg",
-            "../src/static/images/web15-3.jpg",
-            "../src/static/images/web15-4.jpg",
-            "../src/static/images/web15-5.jpg",
-            "../src/static/images/web15-6.jpg"
+            "src/static/images/web15-1.jpg",
+            "src/static/images/web15-2.jpg",
+            "src/static/images/web15-3.jpg",
+            "src/static/images/web15-4.jpg",
+            "src/static/images/web15-5.jpg",
+            "src/static/images/web15-6.jpg"
         ],
         "title": "元山科技官方網站",
         "des": "<p>網址：<a target='_blank' href='http://www.ystech.com.tw/news.html'>官方網站</a></p>"
@@ -219,14 +219,14 @@
     {
         "uid": "16",
         "type": "2",
-        "bg": "../src/static/images/web16a.jpg",
+        "bg": "src/static/images/web16a.jpg",
         "date": "2018/03/20",
         "pic": [
-            "../src/static/images/web16-1.jpg",
-            "../src/static/images/web16-2.jpg",
-            "../src/static/images/web16-3.jpg",
-            "../src/static/images/web16-4.jpg",
-            "../src/static/images/web16-5.jpg"
+            "src/static/images/web16-1.jpg",
+            "src/static/images/web16-2.jpg",
+            "src/static/images/web16-3.jpg",
+            "src/static/images/web16-4.jpg",
+            "src/static/images/web16-5.jpg"
         ],
         "title": "107級視覺傳達設計系畢業製作─來噪電",
         "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180426_ksu/'>官方網站</a></p><p>說明：協助實習生製作的畢業製作demo網站。<br>結合PixiJS + Vue.js + anime.js</p>"
@@ -234,10 +234,10 @@
     {
         "uid": "17",
         "type": "1",
-        "bg": "../src/static/images/web17-1.jpg",
+        "bg": "src/static/images/web17-1.jpg",
         "date": "2016/05/28",
         "pic": [
-            "../src/static/images/web17-1.jpg"
+            "src/static/images/web17-1.jpg"
         ],
         "title": "好奇寶寶動動貼 活動網站",
         "des": "<p>網址：無</p><p>說明：早期製作的網站，網站內容已遺失。利用CANVAS製作GIF，選擇想要的背景後、上傳分享FB的活動。</p>"
@@ -245,12 +245,12 @@
     {
         "uid": "18",
         "type": "2",
-        "bg": "../src/static/images/web18-1.jpg",
+        "bg": "src/static/images/web18-1.jpg",
         "date": "2016/04/28",
         "pic": [
-            "../src/static/images/web18-1.jpg",
-            "../src/static/images/web18-2.jpg",
-            "../src/static/images/web18-3.jpg"
+            "src/static/images/web18-1.jpg",
+            "src/static/images/web18-2.jpg",
+            "src/static/images/web18-3.jpg"
         ],
         "title": "大帑殿",
         "des": "<p>網址：<a target='_blank' href='http://www.tempoktv.com.tw/'>官方網站</a></p><p>說明：早期製作的網站，較為陽春的網站版型。使用jquery + php</p>"
@@ -258,15 +258,15 @@
     {
         "uid": "19",
         "type": "2",
-        "bg": "../src/static/images/web18-1.jpg",
+        "bg": "src/static/images/web18-1.jpg",
         "date": "2016/04/28",
         "pic": [
-            "../src/static/images/web19-1.jpg",
-            "../src/static/images/web19-2.jpg",
-            "../src/static/images/web19-3.jpg",
-            "../src/static/images/web19-4.jpg",
-            "../src/static/images/web19-5.jpg",
-            "../src/static/images/web19-6.jpg"
+            "src/static/images/web19-1.jpg",
+            "src/static/images/web19-2.jpg",
+            "src/static/images/web19-3.jpg",
+            "src/static/images/web19-4.jpg",
+            "src/static/images/web19-5.jpg",
+            "src/static/images/web19-6.jpg"
         ],
         "title": "楊式速讀",
         "des": "<p>網址：<a target='_blank' href='http://ssl.fla.com.tw/yangs_web/index.php'>官方網站</a></p><p>說明：早期製作的網站，較為陽春的網站版型。使用jquery + php，當時也還在用purecss + compass</p>"
@@ -277,7 +277,7 @@
         "bg": "",
         "date": "2018/06/28",
         "pic": [
-            "../src/static/images/web20-1.jpg"
+            "src/static/images/web20-1.jpg"
         ],
         "title": "三菱汽車",
         "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180626_30/'>活動網站</a></p><p>說明：近期製作的網站，為三菱汽車的官網內頁</p>"
@@ -288,7 +288,7 @@
         "bg": "",
         "date": "2018/06/15",
         "pic": [
-            "../src/static/images/web21-1.png"
+            "src/static/images/web21-1.png"
         ],
         "title": "Haagen-dazs",
         "des": "<p>網址：<a target='_blank' href='http://event.eray.tw///y_20180611_dazs/'>活動網站</a></p><p>說明：由於之前活動辦得不錯，近期又在合作中的活動網站。使用Vue + Router + Redux</p>"
@@ -299,7 +299,7 @@
         "bg": "",
         "date": "2018/06/03",
         "pic": [
-            "../src/static/images/web22-1.jpg"
+            "src/static/images/web22-1.jpg"
         ],
         "title": "三菱青春還鄉",
         "des": "<p>網址：<a target='_blank' href='http://event.eray.tw/y_20180613_30_web/'>官方網站</a></p><p>說明：三菱汽車重新打掉重做的網站。使用Vue</p>"
