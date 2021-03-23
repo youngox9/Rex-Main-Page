@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import { useTrail, animated, config } from 'react-spring';
 // import { Trail } from 'react-spring/renderprops';
 import { v4 as uuid } from 'uuid';
+import axios  from 'axios';
+import $ from 'jquery';
 import { Context } from '~~src/Store';
 import data from './data.json';
 import GalleryItem from './GalleryItem';
@@ -23,43 +25,34 @@ const Container = styled.div`
   }
 `;
 
-function Gallery(props) {
+function Management(props) {
   const [state, dispatch] = useContext(Context);
 
-  const { modalOpen } = state;
-  const [galleryData, setGalleryData] = useState([]);
+  // const {  } = state;
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    const newData = data.map(o => ({ key: uuid(), ...o }));
-    setGalleryData(newData);
+    let settings = {
+      async: true,
+      crossDomain: true,
+      url: 'https://mainpage-1c62.restdb.io/rest/data',
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'x-apikey': '005e404c56a25d2edc1adbd3aa32c248a09a5',
+        'cache-control': 'no-cache'
+      }
+    };
+    $.ajax(settings).done(function (response) {
+      setData(response);
+    });
   }, []);
-
-  const masonryOptions = {
-    transitionDuration: 300,
-    gutter: 0,
-  };
-
-  const imagesLoadedOptions = {};
 
   return (
     <Container>
-      <div className={classnames('content', { active: modalOpen })}>
-        <Masonry
-          className="gallery-container"
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad
-          imagesLoadedOptions={imagesLoadedOptions}
-        >
-          {galleryData.map((obj, index) => {
-            return (
-              <GalleryItem obj={obj} key={obj.key} />
-            );
-          })}
-        </Masonry>
-      </div>
+      123
     </Container>
   );
 }
 
-export default Gallery;
+export default Management;

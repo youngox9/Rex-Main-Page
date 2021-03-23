@@ -3,18 +3,27 @@
 import React, { useRef, useState, useLayoutEffect, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 // import useBoundingclientrect from '@rooks/use-boundingclientrect';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated, config, useTrail } from 'react-spring';
 import usePortal from 'react-useportal';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import classnames from 'classnames';
 
-const GalleryModal = styled(animated.div).attrs(props => ({
+const GalleryModalContainer = styled(animated.div).attrs(props => ({
   style: props.style
 }))`
   position: fixed;
   /* z-index: 999; */
   overflow: hidden;
   overflow-y: auto;
-  background-color: black;
+  background-color: #263238;
+
+  &.done {
+    .des {
+      opacity: 1;
+      transform: translate(0, 0%);
+      filter: blur(0px);
+    }
+  }
   .modal-content {
     display: flex;
     flex-wrap: nowrap;
@@ -23,10 +32,9 @@ const GalleryModal = styled(animated.div).attrs(props => ({
     .modal-content-col {
       display: flex;
       flex: 0 1 100%;
-      /* background-color: red; */
       align-items: center;
       height: 100%;
-      /* max-width: 50%; */
+      overflow: hidden;
     }
   }
   .swiper-container {
@@ -39,6 +47,10 @@ const GalleryModal = styled(animated.div).attrs(props => ({
   .des {
     padding: 6%;
     color: white;
+    opacity: 0;
+    transition: 0.6s ease all;
+    transform: translate(0, 20%);
+    filter: blur(6px);
     a {
       color: white;
     }
@@ -55,7 +67,8 @@ const GalleryModal = styled(animated.div).attrs(props => ({
   }
 `;
 
-function GalleryItem(props) {
+function GalleryModal(props) {
+  const [isAniDone, setAniDone] = useState(false);
   const [isShow, setIsShow] = useState(false);
   const [swiperEl, setSwiperEl] = useState(null);
   const { open, setOpen, referenceRef = null, data = {} } = props;
@@ -65,7 +78,7 @@ function GalleryItem(props) {
   });
 
   useEffect(() => {
-    if (open) { setIsShow(true); }
+    if (open) { setIsShow(true); } else { setAniDone(false); }
   }, [open]);
 
   function toggleOpen(e) {
@@ -76,23 +89,18 @@ function GalleryItem(props) {
     return { from: { left: 0, top: 0, width: 0, height: 0, zIndex: -1, opacity: 0 } };
   });
 
-  const modalContentColStyle = useSpring({
-    width: open ?  '50%' : '0%',
-    minWidth: open ?  '50%' : '0%',
-    flex: open ? '0 50%' : '0 0%',
-    delay: open ? 150 : 0,
-    onRest: () => {
-      if (swiperEl?.update) {
-        swiperEl.update(true);
-      }
-    },
-    config: {
-      ...config.wobbly,
-      duration: 600
-    }
+  const [modalContentAniStyle, setModalContentAniStyle] = useSpring(() => {
+    return { from: { width: '0%', minWidth: '0%', flex: '0 0%'  },
+      delay: 400,
+    };
   });
 
-  // set(to);
+  useEffect(() => {
+    if (isAniDone && swiperEl?.update) {
+      swiperEl.update();
+    }
+  }, [isAniDone]);
+
   useEffect(() => {
     const { top = 0, left = 0, width = 0, height = 0 } = referenceRef?.getBoundingClientRect() || {};
     const referencePos = {
@@ -109,10 +117,20 @@ function GalleryItem(props) {
         from: { ...referencePos },
         to: async (next, cancel) => {
           await next({ immediate: true, ...referencePos, zIndex: 999, opacity: 1 });
-          await next({ immediate: false, ...fullPos });
+          await next({ immediate: false,
+            ...fullPos,
+          });
+          setModalContentAniStyle({
+            to: async (n) => {
+              await n({ width: '50%', minWidth: '50%', flex: '0 50%' });
+              setAniDone(true);
+            },
+            config: config.default
+          });
         },
-        delay: 150,
-        config: { ...config.default, duration: 300  }
+        config: {
+          duration: 300
+        }
       });
     } else {
       setModalAni({
@@ -122,25 +140,30 @@ function GalleryItem(props) {
           await next({ immediate: true,
             zIndex: -1,
             opacity: 0,
-            onRest: () => {
-              console.log('done');
-              setIsShow(false);
-            }, });
+          });
+          setModalContentAniStyle({
+            to: async (n) => {
+              await n({ width: '0%', minWidth: '0%', flex: '0 0%' });
+            },
+            config: {
+              ...config.default,
+              duration: 1
+            }
+          });
+          setIsShow(false);
         },
-        config: { duration: 300 },
-
       });
     }
   }, [open]);
 
   const { bg, title = '', des = '', pic } = data;
-  // console.log(data);
-  return  (
-    <Portal>
 
-      <GalleryModal
+  return  isShow && (
+    <Portal>
+      <GalleryModalContainer
         style={modalAniStyle}
         open={open}
+        className={classnames({ done: isAniDone })}
       >
         <div className="modal-content" onClick={toggleOpen}>
           <div className="modal-content-col">
@@ -148,35 +171,31 @@ function GalleryItem(props) {
             <Swiper
               spaceBetween={0}
               slidesPerView={1}
-              // onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => setSwiperEl(swiper)}
+              onSwiper={(swiper) => {  setSwiperEl(swiper); }}
             >
               <SwiperSlide>
                 <div className="pic" style={{ background: `url(${bg}) center/cover no-repeat` }} />
               </SwiperSlide>
-              <SwiperSlide>
-                <div className="pic" style={{ background: `url(${bg}) center/cover no-repeat` }} />
-              </SwiperSlide>
-              {/* {
+              {
                 pic.map(p => (
                   <SwiperSlide>
                     <div className="pic" style={{ background: `url(${p}}) center/cover no-repeat` }} />
                   </SwiperSlide>
                 ))
-              } */}
+              }
             </Swiper>
             )}
           </div>
-          <animated.div className="modal-content-col" style={modalContentColStyle}>
+          <animated.div className="modal-content-col" style={modalContentAniStyle}>
             <div className="des">
               <h3>{title}</h3>
               <p dangerouslySetInnerHTML={{ __html: des }} />
             </div>
           </animated.div>
         </div>
-      </GalleryModal>
+      </GalleryModalContainer>
     </Portal>
   );
 }
 
-export default GalleryItem;
+export default GalleryModal;
