@@ -25,13 +25,14 @@ const Container = styled.div`
   }
 `;
 
-function Management(props) {
+function Gallery(props) {
   const [state, dispatch] = useContext(Context);
 
-  // const {  } = state;
-  const [data, setData] = useState([]);
+  const { modalOpen } = state;
+  const [galleryData, setGalleryData] = useState([]);
 
   useEffect(() => {
+    // https://mainpage-1c62.restdb.io
     let settings = {
       async: true,
       crossDomain: true,
@@ -44,15 +45,38 @@ function Management(props) {
       }
     };
     $.ajax(settings).done(function (response) {
-      setData(response);
+      console.log(response);
     });
+    const newData = data.map(o => ({ key: uuid(), ...o }));
+    setGalleryData(newData);
   }, []);
+
+  const masonryOptions = {
+    transitionDuration: 300,
+    gutter: 0,
+  };
+
+  const imagesLoadedOptions = {};
 
   return (
     <Container>
-      123
+      <div className={classnames('content', { active: modalOpen })}>
+        <Masonry
+          className="gallery-container"
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad
+          imagesLoadedOptions={imagesLoadedOptions}
+        >
+          {galleryData.map((obj, index) => {
+            return (
+              <GalleryItem obj={obj} key={obj.key} />
+            );
+          })}
+        </Masonry>
+      </div>
     </Container>
   );
 }
 
-export default Management;
+export default Gallery;
