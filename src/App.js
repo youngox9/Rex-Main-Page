@@ -10,6 +10,9 @@ import {
 
 import Gallery from '~~containers/Gallery';
 import Main from '~~containers/Main';
+import Management from '~~containers/Management';
+
+// store
 import Store from '~~src/Store';
 
 import '~~styles/style.scss';
@@ -25,6 +28,9 @@ function App() {
           </Route>
           <Route path="/gallery">
             <Gallery />
+          </Route>
+          <Route path="/Management">
+            <Management />
           </Route>
         </Switch>
       </Router>

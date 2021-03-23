@@ -23,7 +23,9 @@ function Main() {
   return (
     <div>
       <Link to="/gallery">Gallery</Link>
-      <Link to="/gallery">Profile</Link>
+      <Link to="/Profile">Profile</Link>
+      <Link to="/Management">Management</Link>
+
     </div>
   );
 }
