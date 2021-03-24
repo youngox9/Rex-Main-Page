@@ -32,24 +32,21 @@ function Gallery(props) {
   const [galleryData, setGalleryData] = useState([]);
 
   useEffect(() => {
-    // https://mainpage-1c62.restdb.io
-    let settings = {
-      async: true,
-      crossDomain: true,
+    getData();
+  }, []);
+
+  async function getData() {
+    const { data: newData } = await axios({
       url: 'https://mainpage-1c62.restdb.io/rest/data',
       method: 'GET',
       headers: {
         'content-type': 'application/json',
         'x-apikey': '005e404c56a25d2edc1adbd3aa32c248a09a5',
-        'cache-control': 'no-cache'
       }
-    };
-    $.ajax(settings).done(function (response) {
-      console.log(response);
     });
-    const newData = data.map(o => ({ key: uuid(), ...o }));
+    console.log('newData >>>', newData);
     setGalleryData(newData);
-  }, []);
+  }
 
   const masonryOptions = {
     transitionDuration: 300,

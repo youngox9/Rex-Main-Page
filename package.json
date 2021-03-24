@@ -38,6 +38,7 @@
     "react-router-dom": "^5.2.0",
     "react-spring": "^8.0.27",
     "react-useportal": "^1.0.14",
+    "reactstrap": "^8.9.0",
     "reset-css": "^5.0.1",
     "stream": "0.0.2",
     "styled-components": "^5.2.1",

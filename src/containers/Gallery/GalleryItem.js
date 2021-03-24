@@ -63,7 +63,7 @@ function GalleryItem(props) {
   const [elRef, setElRef] = useState(null);
   const [open, setOpen] = useState(false);
   const { obj = {} } = props;
-  const { bg, title = '' } = obj;
+  const { cover, bg, title = '' } = obj;
 
   useEffect(() => {
     dispatch({ type: 'GLOBAL_SET_MODAL_OPEN', modalOpen: open });
@@ -73,11 +73,13 @@ function GalleryItem(props) {
     setOpen(!open);
   }
 
+  const picPath = cover?.link || bg;
+
   return (
     <GalleryItemComponent ref={setElRef}>
       <Card>
         <div className="gallery-item" onClick={toggleOpen}>
-          <img className="pic" src={bg} alt="" />
+          <img className="pic" src={picPath} alt="" />
           <p className="title">{title}</p>
         </div>
       </Card>
