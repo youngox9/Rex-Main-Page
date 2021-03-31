@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // import useBoundingclientrect from '@rooks/use-boundingclientrect';
 import { useSpring, animated, config } from 'react-spring';
 import usePortal from 'react-useportal';
-import classNames from 'classNames';
+import classNames from 'classnames';
 import { set } from 'core-js/core/dict';
 import Card from '~~components/Card';
 import { Context } from '~~src/Store';

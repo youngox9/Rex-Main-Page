@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Masonry from 'react-masonry-component';
 import styled from 'styled-components';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { useTrail, animated, config } from 'react-spring';
 // import { Trail } from 'react-spring/renderprops';
 import { v4 as uuid } from 'uuid';
 import axios  from 'axios';
 import $ from 'jquery';
 import { Context } from '~~src/Store';
+import { getGalleryData } from '~~api';
 import data from './data.json';
 import GalleryItem from './GalleryItem';
 
@@ -36,14 +37,7 @@ function Gallery(props) {
   }, []);
 
   async function getData() {
-    const { data: newData } = await axios({
-      url: 'https://mainpage-1c62.restdb.io/rest/data',
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'x-apikey': '005e404c56a25d2edc1adbd3aa32c248a09a5',
-      }
-    });
+    const { data: newData } = await getGalleryData();
     setGalleryData(newData);
   }
 
@@ -56,7 +50,7 @@ function Gallery(props) {
 
   return (
     <Container>
-      <div className={classnames('content', { active: modalOpen })}>
+      <div className={classNames('content', { active: modalOpen })}>
         <Masonry
           className="gallery-container"
           options={masonryOptions}

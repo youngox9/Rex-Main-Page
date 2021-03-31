@@ -1,15 +1,16 @@
 import axios  from 'axios';
 
-const DATABASE_URL = 'https://mainpage-1c62.restdb.io/rest/data';
-const API_TOKEN = '005e404c56a25d2edc1adbd3aa32c248a09a5';
+const baseURL = 'http://rextest-c731.restdb.io/rest';
+const API_TOKEN = 'ba9932b9b1892808871b6bcc5da9d6357953d';
 
-export const getGalleryData = axios({
-  url: DATABASE_URL,
-  method: 'GET',
+const instance = axios.create({
+  baseURL,
+  withCredentials: false,
   headers: {
-    'content-type': 'application/json',
     'x-apikey': API_TOKEN,
   }
 });
+
+export const getGalleryData = () => instance.get('/data');
 
 export default {};
