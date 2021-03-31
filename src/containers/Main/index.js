@@ -25,7 +25,6 @@ function Main() {
       <Link to="/gallery">Gallery</Link>
       <Link to="/Profile">Profile</Link>
       <Link to="/Management">Management</Link>
-
     </div>
   );
 }

@@ -44,7 +44,6 @@ function Gallery(props) {
         'x-apikey': '005e404c56a25d2edc1adbd3aa32c248a09a5',
       }
     });
-    console.log('newData >>>', newData);
     setGalleryData(newData);
   }
 
@@ -67,7 +66,7 @@ function Gallery(props) {
         >
           {galleryData.map((obj, index) => {
             return (
-              <GalleryItem obj={obj} key={obj.key} />
+              <GalleryItem obj={obj} key={obj._id} />
             );
           })}
         </Masonry>

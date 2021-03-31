@@ -76,6 +76,7 @@ module.exports = {
       '~~components': path.resolve(__dirname, 'src', 'components'),
       '~~static': path.resolve(__dirname, 'src', 'static'),
       '~~styles': path.resolve(__dirname, 'src', 'styles'),
+      '~~api': path.resolve(__dirname, 'src', 'api'),
     },
     extensions: [
       '.js',

@@ -156,9 +156,9 @@ function GalleryModal(props) {
     }
   }, [open]);
 
-  const { bg, title = '', des = '', pic } = data;
+  const { cover, title = '', des = '', pic } = data;
 
-  return  isShow && (
+  return  (
     <Portal>
       <GalleryModalContainer
         style={modalAniStyle}
@@ -174,14 +174,21 @@ function GalleryModal(props) {
               onSwiper={(swiper) => {  setSwiperEl(swiper); }}
             >
               <SwiperSlide>
-                <div className="pic" style={{ background: `url(${bg}) center/cover no-repeat` }} />
+                <div className="pic" style={{ background: `url(${cover.link}) center/cover no-repeat` }} />
               </SwiperSlide>
               {
-                pic.map(p => (
-                  <SwiperSlide>
-                    <div className="pic" style={{ background: `url(${p}}) center/cover no-repeat` }} />
-                  </SwiperSlide>
-                ))
+                pic.map(picObj => {
+                  const { id, link } = picObj;
+                  console.log('picObj >>>>', picObj);
+                  if (link) {
+                    return (
+                      <SwiperSlide key={id}>
+                        <div className="pic" style={{ background: `url(${link}}) center/cover no-repeat` }} />
+                      </SwiperSlide>
+                    );
+                  }
+                  return null;
+                })
               }
             </Swiper>
             )}

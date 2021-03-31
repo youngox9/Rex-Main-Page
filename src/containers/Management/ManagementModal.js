@@ -7,6 +7,8 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import _ from 'lodash';
 import { DeleteFilled, PlusCircleFilled, UploadOutlined } from '@ant-design/icons';
 import { v4 as uuid } from 'uuid';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const UploadFileBtnStyled = styled(Button)`
   position: relative;
@@ -59,6 +61,7 @@ const ModalContent = styled.div.attrs(props => ({
       flex: 0 auto;
       max-width: 100%;
     } */
+    margin-bottom: 16px
   }
   .thumbnails {
     display: block;
@@ -116,30 +119,18 @@ function UploadFileBtn(props) {
 }
 
 function ManagementModal(props) {
-  const { isOpen, selectedRecord, onSave, onCancel } = props;
-  const [tempRecord, setTempRecord] = useState({});
+  const { onAdd, isOpen, selectedRecord, onSave, onCancel, action } = props;
+  const [tempRecord, setTempRecord] = useState(null);
+
+  // const action = selectedRecord ? 'Edit' : 'Add';
 
   useEffect(() => {
     setTempRecord(selectedRecord);
   }, [JSON.stringify(selectedRecord)]);
 
-  async function onUploadImage(e, imageId) {
-    let file = e.target.files[0];
-    let fd = new FormData();
-    fd.append('image', file);
-    const res = await axios({
-      url: 'https://api.imgur.com/3/upload',
-      method: 'POST',
-      headers: {
-        Authorization: 'Client-ID 72ccd1fa12781f85c8a62aa9939978647fcf0e20'
-      },
-      data: fd
-    });
-    const { id, deletehash, link } = res?.data?.data;
-    const imgObj = { id, deletehash, link };
-    e.target.value = '';
-    onChangePic(imageId, imgObj);
-  }
+  if (tempRecord === null) return null;
+
+  const { _id, title, pic = [], des = '', cover = {} } = tempRecord;
 
   function onChangePic(id, imgObj) {
     const newPic = tempRecord.pic.reduce((prev, curr) => {
@@ -162,22 +153,30 @@ function ManagementModal(props) {
   }
 
   function onAddPic(id) {
-    const newPic = [...tempRecord.pic, { id: uuid() }];
+    const newPic = [...pic, { id: uuid() }];
     setTempRecord({ ...tempRecord, pic: newPic });
   }
 
   function onChange(key, value) {
-    setTempRecord({ ...tempRecord, [key]: value });
+    const newTemp = { ...tempRecord, [key]: value };
+    console.log(newTemp);
+    setTempRecord(newTemp);
   }
 
-  const { _id, title, pic = [], des = '', cover = {} } = tempRecord;
+  function onSubmit() {
+    if (action === 'Add') {
+      onAdd(tempRecord);
+    } else if (action === 'Edit') {
+      onSave(tempRecord);
+    }
+  }
 
   return (
     <Modal
-      title="Edit"
+      title={action}
       visible={isOpen}
-      onOk={() => onSave(tempRecord)}
-      onCancel={() => { onCancel(null); setTempRecord({}); }}
+      onOk={onSubmit}
+      onCancel={onCancel}
     >
       <ModalContent>
         <div className="form-row">
@@ -189,13 +188,15 @@ function ManagementModal(props) {
               onChange={e => onChange('title', e.target.value)}
             />
           </div>
+        </div>
+        <div className="form-row">
           <div className="form-col">Cover</div>
           <div className="form-col">
             <ThumbItem>
               <Input
                 type="text"
                 value={cover.link}
-                onChange={e => onChangePic(cover, { ...cover, link: e.target.value })}
+                onChange={e => onChange('cover', ({ ...cover, link: e.target.value }))}
               />
               <UploadFileBtn onChange={(obj) => onChange('cover', obj)} />
               <Button
@@ -203,7 +204,7 @@ function ManagementModal(props) {
                 shape="circle"
                 onClick={() => onChange('cover', {})}
               />
-              <div className="thumb" style={{ backgroundImage: `url(${cover.link})` }} />
+              {cover.link && <div className="thumb" style={{ backgroundImage: `url(${cover.link})` }} />}
             </ThumbItem>
           </div>
 
@@ -228,7 +229,7 @@ function ManagementModal(props) {
                         shape="circle"
                         onClick={() => onRemovePic(id)}
                       />
-                      <div key={id} className="thumb" style={{ backgroundImage: `url(${link})` }} />
+                      {link && <div key={id} className="thumb" style={{ backgroundImage: `url(${link})` }} />}
                     </ThumbItem>
                   );
                 }
@@ -243,16 +244,14 @@ function ManagementModal(props) {
           </div>
         </div>
         <div className="form-row">
-          {des && (
-          <CKEditor
-            editor={ClassicEditor}
-            data={des}
-            onChange={(event, editor) => {
-              const newDes = editor.getData();
-              setTempRecord({ ...tempRecord, des: newDes });
-            }}
-          />
-          )}
+          <div className="form-col">Des</div>
+          <div className="form-col">
+            <ReactQuill
+              theme="snow"
+              value={des}
+              onChange={val => onChange('des', val)}
+            />
+          </div>
         </div>
       </ModalContent>
     </Modal>
